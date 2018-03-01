@@ -1,0 +1,34 @@
+.importantName:first-of-type {
+    font-weight: bold;
+}
+
+h1 {
+    color: darkgreen;
+}
+
+h1, h2 {
+    font-family: Georgia, 'Times New Roman', Times, serif;
+    text-align: center;
+}
+
+p {
+    line-height: 25px;
+}
+
+.mightLike {
+    text-transform: uppercase;
+}
+
+a {
+    text-decoration-line: none;
+}
+
+a:hover {
+    text-decoration-line: underline;
+    text-decoration-style: solid;
+}
+
+img {
+    float: left;
+    margin: 15px;
+}
