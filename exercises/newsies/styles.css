@@ -1,0 +1,86 @@
+
+body {
+    margin: 30px;
+    border: #990000 solid 2px;
+}
+
+#header {
+    display: flex;
+    background-color: #990000;
+    justify-content: center;
+    align-items: center;
+    margin: 0;
+    height: 50px;
+}
+
+#header h1 {
+    color: white;
+}
+
+.story {
+    padding: 20px;
+    margin: 20px;
+}
+
+.classifiedHeader {
+    display: flex;
+    background-color: coral;
+    justify-content: center;
+    align-items: center;
+    margin: 0;
+    height: 50px;
+}
+
+.classifiedContainer {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    padding: 20px;
+    margin: 20px;
+}
+
+.classifiedHeader h1 {
+    color: white;
+}
+
+.classifiedAd {
+    border: #990000 dashed 2px;
+    padding: 10px;
+    margin: 10px;
+    width: 300px;
+}
+
+.classifiedAd img {
+    float: left;
+    margin: 0 15px 15px 0;
+}
+
+
+h1, h2 {
+    font-family: Georgia, 'Times New Roman', Times, serif;
+}
+
+h1 {
+    color: darkgreen;
+}
+
+p {
+    line-height: 25px;
+    font-size: larger;
+}
+
+.importantName {
+    font-weight: bold;
+}
+
+.location {
+    color: #990000;
+}
+
+.italicFont {
+    font-style: italic;
+}
+
+.orangeFont {
+    color: orange;
+}
