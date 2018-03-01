@@ -1,1 +1,0 @@
-In this exercise you will be using most common terminal commands that you'll need in order to succeed in this class. The things you can do in the terminal are virtually endless, but we just want to focus on the most commonly used and basic.
