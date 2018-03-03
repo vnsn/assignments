@@ -88,19 +88,29 @@ function fibonacci(n, prev = 0, curr = 1, total = 0) {
     }
 }
 
-
-// fibonacci(0);
-// fibonacci(1);
-// console.log(fibonacci(2));
 console.log("total: " + fibonacci(6));
-// console.log(fibonacci(3));
-// console.log(fibonacci(12));
 
 /* 
 Write a function to solve the quadratic equation. 
 (It should accept three numbers as parameters, and then 
 return an array with the resulting x values.)
+QE: For ax2 + bx + c = 0, (x is squared next to the a) the values of x which are the solutions of the equation are given by:
+x =  (-b​ +- sqrt((b * b) - (4 * a * c)) / (2 * a)	 
+
 */
+
+function quadEquation(a, b, c) {
+    var solutions = [];
+    var rightSide = Math.sqrt((b * b) - (4 * a * c));
+    var plus = (-b + rightSide) / (2 * a);
+    solutions.push(plus);
+    var minus = (-b - rightSide) / (2 * a);
+    solutions.push(minus); 
+    return solutions;
+}
+console.log(`Solutions for x are: ${quadEquation(1, 3, -4)} when a = 1, b = 3, and c = -4.`);   
+console.log(`Solutions for x are: ${quadEquation(2, -4, -3)} when a = 2, b = -4, and c = -3.`);   
+console.log(`Solutions for x are: ${quadEquation(5, 6, 1)} when a = 5, b = 6, and c = 1.`);   
 
 /* 
 Write a function that accepts a string as a parameter. 
