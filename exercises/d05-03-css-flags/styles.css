@@ -411,6 +411,7 @@ so 250 tall, 400 wide. 25x25 grid squares
 }
 
 .maldives-green {
+    position: relative;
     display: inline-block;
     border: #EC3223 solid 50px;
     /* margin: auto; */
@@ -427,4 +428,14 @@ so 250 tall, 400 wide. 25x25 grid squares
     margin: auto;
     margin-top: 17px;
     box-shadow: inset 16px 0px white;
+    position: absolute;
+    left: 79.16px;
 }
+
+/* 
+The circle/box containing the crescent on the Maldives flag is not centered in the green box. 
+It's slightly shifted to the right, per the Flags of the World website. 
+If the width of the green box is 48, the green to the left of the circle is 19
+and the green to the right is 10. Width of circle is 19. 
+Dimensions of my crescent are probsbly not exact per the specs. 
+*/
