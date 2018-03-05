@@ -420,10 +420,11 @@ so 250 tall, 400 wide. 25x25 grid squares
 }
 
 .maldives-circle {
-    background-color: white;
+    background-color: #44952A;
     border-radius: 50%;
     height: 66px;
     width: 66px;
     margin: auto;
     margin-top: 17px;
+    box-shadow: inset 16px 0px white;
 }
