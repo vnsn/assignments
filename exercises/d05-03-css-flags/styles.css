@@ -1,0 +1,429 @@
+* {
+    /* box-sizing: border-box; */
+    font-size: 0;
+}
+
+body {
+    width: 80%;
+    margin: auto;
+    margin-top: 20px;
+}
+
+p {
+    font-size: 24px;
+}
+
+.france {
+    border: black solid 1px;
+    width: 300px;
+    height: 200px;
+}
+
+.france-left {
+    display: inline-block;
+    background-color: #00288F;
+    width: 100px;
+    height: 200px;
+}
+
+.france-middle {
+    display: inline-block;
+    background-color: white;
+    width: 100px;
+    height: 200px;
+}
+
+.france-right {
+    display: inline-block;
+    background-color: #DC3F41;
+    width: 100px;
+    height: 200px;
+}
+
+.germany {
+    border: black solid 1px;
+    width: 300px;
+    height: 200px;
+}
+
+.germany-top {
+    display: inline-block;
+    background-color: black;
+    width: 300px;
+    height: 33.3%;
+}
+
+.germany-middle {
+    display: inline-block;
+    background-color: #CC2A1D;
+    width: 300px;
+    height: 33.3%;
+}
+
+.germany-bottom {
+    display: inline-block;
+    background-color: #F9CE46;
+    width: 300px;
+    height: 33.3%;
+}
+
+.madagascar {
+    border: black solid 1px;
+    width: 300px;
+    height: 200px;
+}
+
+.madagascar-left {
+    display: inline-block;
+    background-color: white;
+    width: 100px;
+    height: 200px;
+}
+
+.madagascar-right {
+    display: inline-block;
+    width: 200px;
+    height: 200px;
+}
+
+.madagascar-top {
+    display: inline-block;
+    background-color: #EA4E3F;
+    width: 200px;
+    height: 50%;
+}
+
+.madagascar-bottom {
+    display: inline-block;
+    background-color: #367B42;
+    width: 200px;
+    height: 50%;
+}
+
+.switzerland {
+    border: black solid 1px;
+    width: 300px;
+    height: 300px;
+}
+
+.switzerland-row {
+    height: 60px;
+}
+
+.switzerland-red {
+    background-color: #EC3223;
+    display: inline-block;
+    width: 60px;
+    height: 60px;
+}
+
+.switzerland-white {
+    background-color: white;
+    display: inline-block;
+    width: 60px;
+    height: 60px;
+}
+
+/*
+Sweden math
+4:2:4 vertically, 5:2:9 horizontally
+so 5:8 overall (most have been 2:3)
+so 250 tall, 400 wide. 25x25 grid squares
+*/
+
+.sweden {
+    border: black solid 1px;
+    width: 400px;
+    height: 250px;
+}
+
+.sweden-row {
+    display: inline-block;
+    width: 400px;
+    height: 100px;
+}
+
+.sweden-left-block {
+    display: inline-block;
+    background-color: #266AA2;
+    width: 125px;
+    height: 100px;
+}
+
+.sweden-yellow-block {
+    display: inline-block;
+    background-color: #F8CC46;
+    width: 50px;
+    height: 100px;
+}
+
+.sweden-right-block {
+    display: inline-block;
+    background-color: #266AA2;
+    width: 225px;
+    height: 100px;
+}
+
+.sweden-middle {
+    display: inline-block;
+    background-color: #F8CC46;
+    width: 400px;
+    height: 50px;
+}
+
+.gambia {
+    border: black solid 1px;
+    width: 300px;
+    height: 200px;
+}
+
+.gambia-top {
+    display: inline-block;
+    background-color: #BE2D2F;
+    width: 300px;
+    height: 33.3%;
+}
+
+.gambia-middle {
+    display: inline-block;
+    background-color: #032286;
+    width: 300px;
+    height: 23.3%;
+}
+
+.gambia-bottom {
+    display: inline-block;
+    background-color: #4A7533;
+    width: 300px;
+    height: 33.3%;
+}
+
+.gambia-white {
+    display: inline-block;
+    background-color: white;
+    width: 300px;
+    height: 5%;
+}
+
+.tonga {
+    border: black solid 1px;
+    width: 400px;
+    height: 200px;
+}
+
+.tonga-left {
+    display: inline-block;
+    width: 150px;
+    height: 200px;
+}
+
+.tonga-right {
+    display: inline-block;
+    width: 250px;
+    height: 200px;
+    background-color: #EC3223;
+}
+
+.tonga-cross {
+    display: inline-block;
+    background-color: white;
+    width: 150px;
+    height: 100px;
+}
+
+.tonga-row {
+    height: 25px;
+}
+
+.tonga-sm-row {
+    height: 12.5px;
+}
+
+.tonga-red {
+    background-color: #EC3223;
+    display: inline-block;
+    width: 25px;
+    height: 25px;
+}
+
+.tonga-white {
+    background-color: white;
+    display: inline-block;
+    width: 25px;
+    height: 25px;
+}
+
+.tonga-sm-white {
+    background-color: white;
+    display: inline-block;
+    width: 12.5px;
+    height: 12.5px;
+}
+
+.tonga-sm-fat-white {
+    background-color: white;
+    display: inline-block;
+    width: 37.5px;
+    height: 12.5px;
+}
+
+.tonga-fat-white {
+    display: inline-block;
+    background-color: white;
+    width: 37.5px;
+    height: 25px;
+}
+
+.tonga-left-bottom {
+    display: inline-block;
+    background-color: #EC3223;
+    height: 100px;
+    width: 150px;
+}
+
+.japan {
+    border: black solid 1px;
+    width: 300px;
+    height: 200px;
+    background-color: white;
+}
+
+.japan-sun {
+    background-color: #AD2333;
+    border-radius: 50%;
+    height: 100px;
+    width: 100px;
+    margin: auto;
+    margin-top: 50px;
+}
+
+.greece {
+    border: black solid 1px;
+    width: 300px;
+    height: 200px;
+}
+
+.greece-top {
+    display: inline-block;
+    width: 300px;
+    height: 110px;
+}
+
+.greece-bottom {
+    display: inline-block;
+    width: 300px;
+    height: 90px;
+}
+
+.greece-top-right {
+    display: inline-block;
+    width: 190px;
+    height: 110px;
+    background-color: white;
+}
+
+.greece-cross {
+    display: inline-block;
+    background-color: white;
+    width: 110px;
+    height: 110px;
+}
+
+.greece-row {
+    height: 22px;
+}
+
+.greece-white {
+    background-color: white;
+    display: inline-block;
+    width: 22px;
+    height: 22px;
+}
+
+.greece-blue {
+    background-color: #001193;
+    display: inline-block;
+    width: 22px;
+    height: 22px;
+}
+
+.greece-stripe-blue {
+    background-color: #001193;
+    display: inline-block;
+    width: 100%;
+    height: 22px;
+}
+
+.greece-stripe-white {
+    background-color: white;
+    display: inline-block;
+    width: 100%;
+    height: 22px;
+}
+
+.greece-baby-stripe {
+    background-color: #001193;
+    display: inline-block;
+    width: 100%;
+    height: 2px;
+}
+
+.niger {
+    border: black solid 1px;
+    width: 300px;
+    height: 200px;
+}
+
+.niger-top {
+    display: inline-block;
+    background-color: #D15B27;
+    width: 300px;
+    height: 33.3%;
+}
+
+.niger-middle {
+    display: inline-block;
+    background-color: white;
+    width: 300px;
+    height: 33.3%;
+}
+
+.niger-circle {
+    background-color: #D15B27;
+    border-radius: 50%;
+    height: 50px;
+    width: 50px;
+    margin: auto;
+    margin-top: 8px;
+}
+
+.niger-bottom {
+    display: inline-block;
+    background-color: #50AC41;
+    width: 300px;
+    height: 33.3%;
+}
+
+.maldives {
+    border: black solid 1px;
+    width: 300px;
+    height: 200px;
+}
+
+.maldives-green {
+    display: inline-block;
+    border: #EC3223 solid 50px;
+    /* margin: auto; */
+    background-color: #44952A;
+    width: 200px;
+    height: 100px;
+}
+
+.maldives-circle {
+    background-color: white;
+    border-radius: 50%;
+    height: 66px;
+    width: 66px;
+    margin: auto;
+    margin-top: 17px;
+}
