@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link rel="stylesheet" href="styles.css">
+    <title>Awesome Airlines</title>
+</head>
+
+<body>
+
+    <header>
+        <h1>Awesome Airlines</h1>
+    </header>
+
+    <main>
+        <h2>Traveler Form</h2>
+        <form id="submit" name="login">
+
+                <h3>Name and Age</h3>
+                <p>
+                <label for="firstName">Enter First Name:
+                    <input name="firstName" id="firstName" type="text" placeholder="Enter your first name">
+                </label>
+                </p>
+
+                <p>
+                <label for="lastName">Enter Last Name:
+                    <input name="lastName" id="lastName" type="text" placeholder="Enter your last name">
+                </label>
+                </p>  
+                <p>
+                <label for="age">Enter Age:
+                    <input name="age" id="age" type="number" placeholder="Enter your age">
+                </label>
+                </p>
+
+            <h3>Gender</h3>
+            <label for="female">Female
+                <input name="gender" id="female" type="radio" value="female">
+            </label>
+
+            <label for="male ">Male
+                <input name="gender" id="male" type="radio" value="male">
+            </label>
+
+            <h3>Where are you headed?</h3>
+            <select name="location" id="location">
+                <option value="none">Pick a place</option>
+                <option value="france">France</option>
+                <option value="germany">Germany</option>
+                <option value="italy">Italy</option>
+                <option value="norway">Norway</option>
+                <option value="portugal">Portugal</option>
+                <option value="spain">Spain</option>
+            </select>
+
+            <h3>Dietary Restrictions</h3>
+            <label for="vegetarian">Vegetarian
+                <input name="vegetarian" id="vegetarian" type="checkbox">
+            </label>
+
+            <label for="vegan">Vegan
+                <input name="vegan" id="vegan" type="checkbox">
+            </label>
+
+            <label for="kosher">Kosher
+                <input name="kosher" id="kosher" type="checkbox">
+            </label>
+
+            <label for="lactose-free">Lactose-free
+                <input name="lactose-free" id="lactose-free" type="checkbox">
+            </label>
+
+            <label for="gluten-free">Gluten-free
+                <input name="gluten-free" id="gluten-free" type="checkbox">
+            </label>
+
+            <label for="grain-free">Grain-free
+                <input name="grain-free" id="grain-free" type="checkbox">
+            </label>
+
+            <button>Submit</button>
+
+        </form>
+    </main>
+
+    <script src="main.js "></script>
+
+</body>
+
+</html>

@@ -1,0 +1,32 @@
+body {
+    height: 100vh;
+    margin: auto;
+
+}
+
+header {
+    text-align: center;
+    background-color: #990000;
+    color: white;
+    height: 80px;
+    padding-top: 5px;
+}
+
+main {
+    width: 80%;
+    margin: auto;
+}
+
+/* .name-age * {
+    display: block;
+} */
+
+
+button {
+    display: block;
+    margin: 20px 10px 5px 0;
+    height: 40px;
+    width: 80px;
+    border-radius: 20%;
+}
+
