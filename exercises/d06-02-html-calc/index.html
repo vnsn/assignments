@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Simple HTML Calculator</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+
+<body>
+    <header>
+        <h1>Simple HTML Calculator</h1>
+    </header>
+
+    <section>
+        <div class="calcBox add">
+            <form name="addition">
+                <div class="form-items">
+                    <input type="number" name="x">
+                    <p class="math-sign">+</p>
+                    <input type="number" name="y">
+                    <button>Add these numbers</button>
+                </div>
+            </form>
+            <div class="result">
+                <p id="addOutput"></p>
+            </div>
+        </div>
+
+        <div class="calcBox subtract">
+            <form name="subtract">
+                <div class="form-items">
+                    <input type="number" name="x">
+                    <p class="math-sign">&mdash;</p>
+                    <input type="number" name="y">
+                    <button>Subtract these numbers</button>
+                </div>
+            </form>
+            <div class="result">
+                <p id="subtractOutput"></p>
+            </div>
+        </div>
+
+        <div class="calcBox multiply">
+            <form name="multiply">
+                <div class="form-items">
+                    <input type="number" name="x">
+                    <p class="math-sign">x</p>
+                    <input type="number" name="y">
+                    <button>Multiply these numbers</button>
+                </div>
+            </form>
+            <div class="result">
+                <p id="multiplyOutput"></p>
+            </div>
+        </div>
+    </section>
+
+    <script src="main.js"></script>
+
+</body>
+
+</html>

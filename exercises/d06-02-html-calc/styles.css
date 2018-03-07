@@ -1,0 +1,83 @@
+
+body {
+    width: 80%;
+    margin: auto;
+    height: 100vh;
+}
+
+h1 {
+    font-size: 30px;
+}
+
+p {
+    font-size: 18px;
+}
+
+header {
+    text-align: center;
+}
+
+.calcBox {
+    min-height: 150px;
+    margin: auto;
+    margin: 10px;
+    padding-top: 45px;
+    /* border: yellow solid 2px; */
+}
+
+.add {
+    background-color: pink;
+}
+
+.subtract {
+    background-color: lightcyan;
+
+}
+
+.multiply {
+    background-color: lightgoldenrodyellow;
+}
+
+form * {
+    text-align: center;
+}
+
+form {
+    margin-top: 10px;
+    /* border: 2px solid green; */
+}
+
+.form-items {
+    margin: auto;
+    /* border: 1px dashed black; */
+}
+
+input, button {
+    margin: 10px;
+    font-size: 14px;
+    height: 20px;
+}
+
+button {
+    height: 25px;
+}
+
+.math-sign {
+    font-family: monospace;
+    font-size: 30px;
+    font-weight: bolder;
+    display: inline;
+    margin: 10px;
+}
+
+.result {
+    width: 300px;
+    margin: auto;
+    text-align: center;
+    min-height: 20px;
+    /* border: solid 1px blueviolet; */
+}
+
+.result p {
+    font-size: 24px;
+}
