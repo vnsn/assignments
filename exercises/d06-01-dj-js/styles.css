@@ -1,0 +1,20 @@
+
+body {
+    height: 100vh;
+}
+
+header {
+    text-align: center;
+    font-size: 30px;
+}
+
+.square-content {
+    margin: auto;
+    width: 400px;
+    height: 50vh;
+}
+
+.big-square {
+    height: 100%;
+    background-color: pink;
+}
