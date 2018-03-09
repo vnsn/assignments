@@ -11,7 +11,7 @@ function reverseStr(str) {
 
 var testStr = "Hello World"
 console.log("\ntesting reserveStr");
-console.log(reverseStr(testStr));
+console.log(`${testStr} ==> ${reverseStr(testStr)}`);
 
 
 // 2) Make a function that takes a string 
@@ -19,8 +19,6 @@ console.log(reverseStr(testStr));
 
 function isNum(str) {
  var test = str / 10;
- console.log(test);
- console.log(typeof(test));
  if (Number.isNaN(test)) {
      return false;
  } else return true;
@@ -29,9 +27,8 @@ function isNum(str) {
 testNum1 = "3";
 testNum2 = "three";
 console.log("\ntesting isNum");
-console.log(isNum(testNum1));
-console.log(isNum(testNum2));
-
+console.log(`${testNum1}: ${isNum(testNum1)}`);
+console.log(`${testNum2}: ${isNum(testNum2)}`);
 
 
 // 3) Make a function that takes a number and returns true 
@@ -44,8 +41,8 @@ function isEven(num) {
 }
 
 console.log("\ntesting isEven");
-console.log(isEven(3));
-console.log(isEven(4));
+console.log(`3: ${isEven(3)}`);
+console.log(`4: ${isEven(4)}`);
 
 
 function arrAvg(arr) {
@@ -61,7 +58,7 @@ function arrAvg(arr) {
 testArr = [5, -10, 10, 20];
 
 console.log("\ntesting arrAvg");
-console.log(arrAvg(testArr));
+console.log(`test array: ${testArr} \naverage: ${arrAvg(testArr)}`);
 
 
 // 5) Make a function that takes two arrays and returns a single array 
@@ -84,4 +81,4 @@ function combineArr(arr1, arr2) {
 
 testArr2 = ["a", "b", "c"];
 console.log("\ntesting combineArr");
-console.log(combineArr(testArr, testArr2));
+console.log(`test array 1: ${testArr} \ntest array 2: ${testArr2} \ncombined: ${combineArr(testArr, testArr2)}\n`);
