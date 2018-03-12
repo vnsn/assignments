@@ -1,35 +1,43 @@
+// get number of each pest caught from the page
+// calculate total cost based on prices for each pest - defined as constants
+
 // update the Total Price as numbers are typed into each field. 
 // don't wait for a form submission
 
-document.goomba.num.addEventListener("input", calcCost);
-document.bob.num.addEventListener("input", calcCost);
-document.cheep.num.addEventListener("input", calcCost);
+var goombas = document.goomba.num;
+var bobs = document.bob.num;
+var cheeps = document.cheep.num;
+
+
+goombas.addEventListener("input", calcCost);
+bobs.addEventListener("input", calcCost);
+cheeps.addEventListener("input", calcCost);
 
 function calcCost() {
-    const GFEE = 5;
-    const BFEE = 7;
-    const CFEE = 11;
+    const GOOMBAFEE = 5;
+    const BOBFEE = 7;
+    const CHEEPFEE = 11;
 
-    var gNum = 0;
-    var bNum = 0;
-    var cNum = 0;    
+    var goombaNum = 0;      // number of goombas entered on page
+    var bobNum = 0;         // number of bob-ombs entered on page
+    var cheepNum = 0;       // number of cheep-cheeps entered on page
     var sum = 0;
 
     var outputField = document.getElementById("total");
 
-    if (document.goomba.num.value <= 0) {
-        gNum = 0;
-    } else gNum = Number.parseInt(document.goomba.num.value);
+    if (goombas.value <= 0) {
+        goombaNum = 0;
+    } else goombaNum = Number.parseInt(goombas.value);
 
-    if (document.bob.num.value <= 0) {
-        bNum = 0;
-    } else bNum = Number.parseInt(document.bob.num.value);
+    if (bobs.value <= 0) {
+        bobNum = 0;
+    } else bobNum = Number.parseInt(bobs.value);
 
-    if (document.cheep.num.value <= 0) {
-        cNum = 0;
-    } else cNum = Number.parseInt(document.cheep.num.value);
+    if (cheeps.value <= 0) {
+        cheepNum = 0;
+    } else cheepNum = Number.parseInt(cheeps.value);
 
-    sum += (gNum * GFEE) + (bNum * BFEE) + (cNum * CFEE);
+    sum += (goombaNum * GOOMBAFEE) + (bobNum * BOBFEE) + (cheepNum * CHEEPFEE);
     outputField.innerHTML = sum;
 
     return sum;
