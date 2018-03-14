@@ -40,7 +40,7 @@ Enemy.prototype.getSpecialItem = function () {
 // returns how much damage (hitpoints) the enemy inflicted.
 function enemyAttack() {
     var damage = Math.floor((Math.random() * 20));
-    console.log(`Your enemy inflicted ${damage} damage points.`);
+    console.log(`Your enemy inflicted ${damage} damage points.\n`);
     return damage;
 }
 
@@ -49,10 +49,11 @@ function runAway() {
     var escape = Math.floor(Math.random() * 2);
     if (escape === 1) {
         player.hp -= enemyAttack();
+        console.log(`You now have ${player.hp} hit points.\n`)
         return 1;
     } else {
         player.hp = 0;
-        console.log(`The beast was too much for you.`);
+        console.log(`\nThe beast was too much for you. :-(`);
         return 0;
     }
 }
@@ -68,7 +69,7 @@ function fightBack(enemy) {
 
     if (enemy.hitPoints <= 0) {
         // if the enemy's hp <= 0, then you killed it and you get a prize + some hp.
-        console.log(`Great job, ${player.name}! You killed the ${enemy.type}. You picked up its prized possession - ${enemy.item} - and added it to your inventory! You also get a bonus of 39 hit points!`);
+        console.log(`\nGreat job, ${player.name}! You killed the ${enemy.type}. \nYou picked up its prized possession - ${enemy.item} - and added it to your inventory! \nYou also get a bonus of 39 hit points!\n`);
         player.inventory.push(enemy.item);
         player.hp += 39;
         player.enemiesKilled++;
@@ -93,7 +94,7 @@ function fightBack(enemy) {
 
 function getAttacked() {
     var currEnemy = new Enemy();
-    console.log(`You encounter a vicious ${currEnemy.type}. `);
+    console.log(`\nYou encounter a vicious ${currEnemy.type}. `);
     fightFlight = rs.keyIn("Do you want to [a]ttack or [r]un? ", {
         limit: ['a', 'r']
     });
@@ -104,15 +105,15 @@ function getAttacked() {
     }
     if (fightFlight === 'r') {
         // if you run, there's a 50-50 chance you escape, but the enemy does attack you as you leave.
-        console.log(`You are running, but the beast is chasing you. Will you survive??`);
+        console.log(`\nYou are running, but the beast is chasing you. Will you survive??`);
         runAway();
     }
 }
 
 // START OF THE GAME
-console.log("\nWelcome to the Colossal Adventure RPG. This is a fun message.");
+console.log("\nWelcome to the Colossal Adventure RPG. This is a fun message. :-)");
 player.name = rs.question("What is your first name? ");
-console.log(`Good luck on your adventure, ${player.name}`);
+console.log(`Good luck on your adventure, ${player.name}!\n`);
 
 function playTheGame() {
     var choice = rs.keyIn("Enter 'w' to walk, 'p' to see your hit points and inventory, or 'q' to quit the game. ", {
@@ -127,10 +128,10 @@ function playTheGame() {
             }
             break;
         case "p":
-            console.log(`${player.name}, you have ${player.hp} hit points and the following items in your inventory: ${player.inventory.join(", ")}`);
+            console.log(`\n${player.name}, you have ${player.hp} hit points and the following items in your inventory: ${player.inventory.join(", ")}\n`);
             break;
         case "q":
-            console.log(`Quitters are losers.`);
+            console.log(`\nQuitters are losers. :-P`);
             player.hp = 0;
             break;
     }
@@ -142,9 +143,9 @@ while (player.hp > 0 && player.enemiesKilled < 3) {
 }
 
 if (player.hp <= 0) {
-    console.log(`Sorry ${player.name}, this is a cool death message, and... YOU LOSE`);
+    console.log(`Sorry ${player.name}, you were brave for playing the game, but... YOU LOSE.\n`);
 }
 
 if (player.enemiesKilled >= 3) {
-    console.log(`Congratulations, ${player.name}! You are super awesome and you won the game!`);
+    console.log(`Congratulations, ${player.name}! You are super awesome and you won the game!\n`);
 }
