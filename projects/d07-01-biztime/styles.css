@@ -1,0 +1,212 @@
+
+@font-face {
+    font-family: SuperMario256;
+    src: url(font/SuperMario256.ttf);
+}
+
+body {
+    margin: auto;
+    width: 100vw;
+}
+
+h1, h2 {
+    font-family: SuperMario256;
+}
+
+p {
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 16px;
+    font-weight: bolder;
+    line-height: 1.1em;
+}
+
+.wrapper {
+    display: flex;
+    flex-flow: column wrap;
+    text-align: center;
+    align-content: center;
+    justify-content: center;
+}
+
+header {
+    /* flex: .10; */
+    display: flex;
+    flex-flow: row wrap;
+    justify-content: space-between;
+    align-items: center;
+    align-content: flex-start;
+
+    text-align: left;
+    background-color: #FFD40E;
+    /* padding-left: 20px; */
+    color: #E81B1F;
+ 
+}
+
+header * {
+    border: dashed 2px green;
+}
+
+header ul {
+    list-style-type: none;
+    display: inline;
+}
+
+header li {
+    display: inline;
+    font-size: larger;
+}
+
+.site-title {
+    /* flex: 1; */
+    font-size: 32px;
+    border: 1px dashed darkblue;
+}
+
+.banner {
+    justify-content: center;
+    align-items: center;
+    background-color: #E81B1F;
+    display: flex;
+    min-height: content;
+    /* flex: .20; */
+}
+
+.imgLuigi {
+    background-image: url(assets/luigi.png);
+    height: 95%;
+    background-position: center;
+    /* background-size: cover; */
+    background-size: contain;
+    background-repeat: no-repeat;
+    flex-grow: 1.5;
+    width: 100px;
+    height: 100px;
+}
+
+.content {
+    /* flex: .35; */
+    color: #E81B1F;
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+}
+
+.content p, .content h1 {
+    width: 60%;
+
+}
+
+footer {
+    display: flex;
+    flex-flow: row wrap;
+    justify-content: space-around;
+    align-items: center;
+    
+    background-color: #FFD40E;
+    padding: 2px;
+    padding-right: 10px;
+    min-height: content;
+}
+
+footer img {
+    max-height: 25px;
+    max-width: 25px;
+    padding: 2px;
+}
+
+@media screen and (min-width: 600px) {
+    section {
+        border: green dashed 1px;
+    }
+ 
+    header {
+        font-size: 28px;
+    }
+
+    .content p, .content h1 {
+        width: 50%;
+    }  
+
+    footer img {
+        max-height: 50px;
+        max-width: 50px;
+    }
+
+}
+
+@media screen and (min-width: 800px) {
+    section {
+        border: solid 2px darkcyan;
+    }
+
+    header {
+        font-size: 32px;
+        flex: .20;
+    }
+
+    .content {
+        flex: .30;
+    }
+
+    .content p, .content h1 {
+        width: 40%;
+    }
+
+    footer img {
+        max-height: 75px;
+        max-width: 75px;
+    }
+}
+
+/*
+Can use flex: .35; to set the height of a particular section 
+to 35% height of the total parent if using column.
+Would 
+Make sure 
+
+em is relative to ______.
+1em = 16px;
+
+*/
+
+
+.fa {
+    padding: 5px;
+    font-size: 25px;
+    width: 25px;
+    text-align: center;
+    text-decoration: none;
+    margin: 2px 2px;
+    border-radius: 50%;
+  }
+  
+  .fa:hover {
+      opacity: 0.7;
+  }
+  
+  .fa-github {
+      background: #0009EB;
+      color: white;
+  }
+
+  .fa-facebook {
+    background: #3B5998;
+    color: white;
+  }
+  
+  .fa-twitter {
+    background: #55ACEE;
+    color: white;
+  }
+
+  .fa-linkedin {
+    background: #007bb5;
+    color: white;
+  }
+  
+  .fa-instagram {
+    background: #125688;
+    color: white;
+  }
+  
