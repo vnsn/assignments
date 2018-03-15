@@ -1,0 +1,62 @@
+{
+    "appetizers": [
+        {
+            "name": "Lettuce cups",
+            "ingredients": "seasoned chicken, iceburg lettuce",
+            "decription": "Grain-free chicken lettuce cups"
+        },
+        {
+            "name": "Warm pistachios and cashews",
+            "ingredients": "pistachios, cashews",
+            "decription": "Roasted pistachios and cashews, warmed to perfection"
+        }
+    ],
+    "cold sandwiches": [
+        {
+            "name": "Turkey rollups",
+            "ingredients": "cold turkey slices, cheese, tomato, lettuce, pickles, mustard, mayo, salt, pepper",
+            "decription": "Hormone and antibiotic-free turkey and cheese rolled into a lettuce wrap"
+        },
+        {
+            "name": "Roast beef rollups",
+            "ingredients": "cold roast beef slices, cheese, tomato, lettuce, pickles, mustard, mayo, salt, pepper",
+            "decription": "Grass-feed roast beef and cheese rolled into a lettuce wrap"
+        }
+    ],
+    "hot sandwiches": [
+        {
+            "name": "Burger",
+            "ingredients": "beef, tomato, lettuce, pickles, secret sauce, salt, pepper",
+            "decription": "Never-frozen grass-fed beef burger in a lettuce wrap"
+        },
+        {
+            "name": "Chicken sandwich",
+            "ingredients": "chicken, tomato, lettuce, pickles, secret sauce, salt, pepper",
+            "decription": "Hormone and antibiotic-free chicken patty in a lettuce wrap"
+        }
+    ],
+    "desserts": [
+        {
+            "name": "Blueberries and cream",
+            "ingredients": "blueberries, cream",
+            "decription": "Fresh blueberries with heavy cream"
+        },
+        {
+            "name": "Almond butter and blueberries",
+            "ingredients": "almond butter, blueberries",
+            "decription": "Fresh ground almond butter topped with fresh blueberries"
+        }
+    ],
+    "drinks": [
+        {
+            "name": "Flat water",
+            "ingredients": "water",
+            "decription": "Water without bubbles"
+        },
+        {
+            "name": "Fizzy water",
+            "ingredients": "water, bubbles",
+            "decription": "Water with bubbles"
+        }
+    ]
+}
