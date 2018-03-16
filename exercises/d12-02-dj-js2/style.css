@@ -19,7 +19,7 @@
     margin: 20px;
     text-align: center;
     border: 1px solid #333;
-    box-shadow: 10px 10px 5px 0 #999;
+    box-shadow: 10px 10px 5px 0 #999 outset;
     border-radius: 10%;
     /* 4 transition properties */
     transition-property: border-radius, box-shadow, background-color, height, width, border;
@@ -74,7 +74,7 @@
 }
 
 .five {
-    background-color: navy
+    background-color: navy;
 }
 
 .five:hover {
