@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link rel="stylesheet" href="style.css">
+    <title>Jen's To Do</title>
+</head>
+
+<body>
+    <header>
+        <h1>Jen's To Do List</h1>
+    </header>
+
+    <h2>Add a To Do Item</h2>
+    <form name="submit">
+        <p>
+            Title:
+            <label for="todo">
+                <input type="text" name="todo">
+            </label>
+        </p>
+        <p>
+            Description:
+            <label for="description">
+                <input type="text" name="description">
+            </label>
+        </p>
+        <p>
+            Price: <label for="price">
+                <input type="number" name="price">
+            </label>
+        </p>
+        <p>
+            Image URL: <label for="imgURL">
+                <input type="text" name="imgURL">
+            </label>
+        </p>
+        <p>
+            <button>Submit</button>
+        </p>
+    </form>
+
+
+    <div>
+        <h2>Current To Dos</h2>
+        <h3>Click on an item to mark it complete.</h3>
+        <ul id="mylist">
+            <!-- <li class="checks"></li> -->
+            <li></li>
+        </ul>
+    </div>
+
+
+    <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
+    <script src="main.js"></script>
+</body>
+
+</html>
