@@ -55,7 +55,6 @@ header {
     align-items: center;
     background-color: #E81B1F;
     height: 7em;
-    /* width: 100%; */
     font-size: 1rem;
 }
 
@@ -74,7 +73,6 @@ header {
     flex-direction: column;
     align-items: center;
     min-width: fit-content;
-    text-align: center;
     color: #E81B1F;
     font-size: 1rem;
 }
@@ -91,6 +89,35 @@ header {
     margin-bottom: 0.6em;
 }
 
+.contact {
+    text-align: center;
+}
+
+.serviceIMG {
+    float: left;
+    height: 8em;
+    margin-right: 1em;
+    margin-bottom: 1em;
+}
+
+.baddie-row {
+    display: flex;
+    width: 100%;
+    justify-content: space-around;
+}
+
+.baddie {
+    height: 3em;
+    width: 3em;
+    margin: 1em;
+}
+
+.disclaimer {
+    color: gray;
+    font-size: small;
+    text-align: left;
+    font-weight: lighter;
+}
 
 .social {
     font-size: 1rem;
@@ -108,14 +135,12 @@ footer {
     font-size: 1rem;
     display: flex;
     flex-flow: column;
-    /* justify-content: space-around; */
     align-items: center;
     align-content: center;
     background-color: #E81B1F;
     text-align: center;
     font-weight: bold;
     padding: 0.3em;
-    /* min-height: fit-content; */
     min-width: fit-content;
 }
 
@@ -157,6 +182,10 @@ Styles for social links from Font Awesome
         line-height: 1.2em;
         margin-bottom: 0.8em;
     }
+    .baddie {
+        height: 4em;
+        width: 4em;
+    }
 }
 
 @media screen and (min-width: 800px) {
@@ -169,17 +198,20 @@ Styles for social links from Font Awesome
     }
 
     .banner {
-        min-height: 17em;
+        min-height: 15em;
     }
     .imgLuigi {
-        width: 14em;
-        height: 14em;
+        width: 12em;
+        height: 12em;
     }
 
     .content p {
-        width: 60%;
         line-height: 1.4em;
         margin-bottom: 1em;
     }
 
+    .baddie {
+        height: 5em;
+        width: 5em;
+    }
 }
