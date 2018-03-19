@@ -30,7 +30,6 @@ function displayTodos(myObj) {
     span.innerText = ` ${myObj.title}`;
 
     li.appendChild(delButton);
-    // li.appendChild(checkBox);
     li.appendChild(span);
 
     // add each to do list item to the DOM

@@ -3,9 +3,8 @@ var inputForm = document.submit;
 
 if (typeof (Storage) !== "undefined") {
     var myDataArr = JSON.parse(localStorage.getItem("Mom")) || [];
-    // storedMom = JSON.parse(localStorage.getItem("Mom"));
-    console.log("i just GOT this:");
-    console.log(myDataArr);
+    // console.log("i just GOT this:");
+    // console.log(myDataArr);
     if (myDataArr !== null) {
         if (myDataArr.length !== 0) {
             myDataArr.forEach(function (item) {
@@ -19,8 +18,8 @@ if (typeof (Storage) !== "undefined") {
 
 function setLocal() {
     localStorage.setItem("Mom", JSON.stringify(myDataArr));
-    console.log("i just SET this:");
-    console.log(JSON.parse(localStorage.getItem("Mom")));
+    // console.log("i just SET this:");
+    // console.log(JSON.parse(localStorage.getItem("Mom")));
 }
 
 function deleteTodo(itemId) {
