@@ -1,212 +1,185 @@
+* {
+    margin: 0;
+    padding: 0;
+}
 
 @font-face {
     font-family: SuperMario256;
     src: url(font/SuperMario256.ttf);
 }
 
-body {
-    margin: auto;
-    width: 100vw;
-}
-
-h1, h2 {
+h1,
+h2 {
     font-family: SuperMario256;
-}
-
-p {
-    font-family: Arial, Helvetica, sans-serif;
-    font-size: 16px;
-    font-weight: bolder;
-    line-height: 1.1em;
 }
 
 .wrapper {
     display: flex;
     flex-flow: column wrap;
-    text-align: center;
     align-content: center;
     justify-content: center;
+    max-width: 90vw;
+    margin: auto;
 }
 
 header {
-    /* flex: .10; */
     display: flex;
     flex-flow: row wrap;
     justify-content: space-between;
     align-items: center;
     align-content: flex-start;
-
-    text-align: left;
     background-color: #FFD40E;
-    /* padding-left: 20px; */
     color: #E81B1F;
- 
-}
-
-header * {
-    border: dashed 2px green;
-}
-
-header ul {
-    list-style-type: none;
-    display: inline;
-}
-
-header li {
-    display: inline;
-    font-size: larger;
+    min-width: fit-content;
+    font-size: 1rem;
+    padding: .3em;
 }
 
 .site-title {
-    /* flex: 1; */
-    font-size: 32px;
-    border: 1px dashed darkblue;
+    font-size: 2em;
+}
+
+.nav-links {
+    list-style-type: none;
+    display: flex;
+    flex-wrap: wrap;
+}
+
+.nav-links li {
+    margin: .3em;
 }
 
 .banner {
+    display: flex;
     justify-content: center;
     align-items: center;
     background-color: #E81B1F;
-    display: flex;
-    min-height: content;
-    /* flex: .20; */
+    height: 7em;
+    /* width: 100%; */
+    font-size: 1rem;
 }
 
 .imgLuigi {
     background-image: url(assets/luigi.png);
-    height: 95%;
+    /* height: 95%; */
     background-position: center;
-    /* background-size: cover; */
     background-size: contain;
     background-repeat: no-repeat;
-    flex-grow: 1.5;
-    width: 100px;
-    height: 100px;
+    height: 6em;
+    width: 6em;
 }
 
 .content {
-    /* flex: .35; */
-    color: #E81B1F;
     display: flex;
-    align-items: center;
     flex-direction: column;
+    align-items: center;
+    min-width: fit-content;
+    text-align: center;
+    color: #E81B1F;
+    font-size: 1rem;
 }
 
-.content p, .content h1 {
-    width: 60%;
-
+.content h2 {
+    font-size: 1.5em;
+    margin: 0.6em;
 }
 
-footer {
+.content p {
+    font-family: Arial, Helvetica, sans-serif;
+    font-weight: bolder;
+    line-height: 1.1em;
+    margin-bottom: 0.6em;
+}
+
+
+.social {
+    font-size: 1rem;
     display: flex;
     flex-flow: row wrap;
     justify-content: space-around;
     align-items: center;
-    
+    align-content: center;
     background-color: #FFD40E;
     padding: 2px;
-    padding-right: 10px;
-    min-height: content;
+    min-height: fit-content;
 }
 
-footer img {
-    max-height: 25px;
-    max-width: 25px;
-    padding: 2px;
-}
-
-@media screen and (min-width: 600px) {
-    section {
-        border: green dashed 1px;
-    }
- 
-    header {
-        font-size: 28px;
-    }
-
-    .content p, .content h1 {
-        width: 50%;
-    }  
-
-    footer img {
-        max-height: 50px;
-        max-width: 50px;
-    }
-
-}
-
-@media screen and (min-width: 800px) {
-    section {
-        border: solid 2px darkcyan;
-    }
-
-    header {
-        font-size: 32px;
-        flex: .20;
-    }
-
-    .content {
-        flex: .30;
-    }
-
-    .content p, .content h1 {
-        width: 40%;
-    }
-
-    footer img {
-        max-height: 75px;
-        max-width: 75px;
-    }
+footer {
+    font-size: 1rem;
+    display: flex;
+    flex-flow: column;
+    /* justify-content: space-around; */
+    align-items: center;
+    align-content: center;
+    background-color: #E81B1F;
+    text-align: center;
+    font-weight: bold;
+    padding: 0.3em;
+    /* min-height: fit-content; */
+    min-width: fit-content;
 }
 
 /*
-Can use flex: .35; to set the height of a particular section 
-to 35% height of the total parent if using column.
-Would 
-Make sure 
-
-em is relative to ______.
-1em = 16px;
-
+Styles for social links from Font Awesome
 */
-
-
-.fa {
-    padding: 5px;
-    font-size: 25px;
-    width: 25px;
+.fab {
+    font-size: 1em;
     text-align: center;
     text-decoration: none;
     margin: 2px 2px;
+    padding: 5px;
     border-radius: 50%;
-  }
-  
-  .fa:hover {
-      opacity: 0.7;
-  }
-  
-  .fa-github {
-      background: #0009EB;
-      color: white;
-  }
+    color: #E81B1F;
+}
 
-  .fa-facebook {
-    background: #3B5998;
-    color: white;
-  }
-  
-  .fa-twitter {
-    background: #55ACEE;
-    color: white;
-  }
+.fab:hover {
+    opacity: 0.7;
+}
 
-  .fa-linkedin {
-    background: #007bb5;
-    color: white;
-  }
-  
-  .fa-instagram {
-    background: #125688;
-    color: white;
-  }
-  
+@media screen and (min-width: 600px) {
+    html {
+        font-size: 18px;
+    }
+
+    header {
+        padding: 0.6em;
+    }
+    
+    .banner {
+        min-height: 12em;
+    }
+    .imgLuigi {
+        width: 10em;
+        height: 10em;
+    }
+    .content p {
+        width: 80%;
+        line-height: 1.2em;
+        margin-bottom: 0.8em;
+    }
+}
+
+@media screen and (min-width: 800px) {
+    html {
+        font-size: 20px;
+    }
+
+    header {
+        min-height: 5em;
+    }
+
+    .banner {
+        min-height: 17em;
+    }
+    .imgLuigi {
+        width: 14em;
+        height: 14em;
+    }
+
+    .content p {
+        width: 60%;
+        line-height: 1.4em;
+        margin-bottom: 1em;
+    }
+
+}
