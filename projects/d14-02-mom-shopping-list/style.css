@@ -1,0 +1,11 @@
+* {
+    line-height: 1.5em;
+}
+
+input {
+    min-width: 250px;
+}
+
+button {
+    margin-right: 10px;
+}
