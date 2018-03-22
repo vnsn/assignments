@@ -111,11 +111,6 @@ function getAttacked() {
 }
 
 // START OF THE GAME
-console.log("\033[3;0;0t");
-console.log("\033[8;55;120t");
-console.log("\033[40;32m");
-console.log("\033[2J \033[;H");
-
 console.log("\nWelcome to the Colossal Adventure RPG. This is a fun message. :-)");
 player.name = rs.question("What is your first name? ");
 console.log(`Good luck on your adventure, ${player.name}!\n`);
@@ -133,7 +128,6 @@ function playTheGame() {
             }
             break;
         case "p":
-        console.log("\033[2J \033[;H");
             console.log(`\n${player.name}, you have ${player.hp} hit points and the following items in your inventory: ${player.inventory.join(", ")}\n`);
             break;
         case "q":
@@ -155,8 +149,3 @@ if (player.hp <= 0) {
 if (player.enemiesKilled >= 3) {
     console.log(`Congratulations, ${player.name}! You are super awesome and you won the game!\n`);
 }
-
-
-console.log("\033[8;24;80t");
-console.log("\033[0m");
-console.log("\033[2J \033[;H");
