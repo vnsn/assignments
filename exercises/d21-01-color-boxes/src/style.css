@@ -1,0 +1,25 @@
+* {
+    box-sizing: border-box;
+}
+
+body {
+    width: 80%;
+    margin: auto;
+}
+
+h1, h2, p {
+    padding-left: 10px;
+}
+
+.ugly {
+    border: 3px solid chartreuse;
+}
+
+.normal {
+    border: 1px solid red;
+}
+
+.fat {
+    border: 5px solid black;
+}
+
