@@ -86,5 +86,5 @@ function playPrincess() {
 }
 
 playPrincess();
-// playPrincess();
-// playPrincess();
+playPrincess();
+playPrincess();
