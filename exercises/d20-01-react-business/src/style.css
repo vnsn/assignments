@@ -1,0 +1,220 @@
+
+* {
+    margin: 0;
+    padding: 0;
+}
+
+@font-face {
+    font-family: SuperMario256;
+    src: url(./font/SuperMario256.ttf);
+}
+
+
+
+h1,
+h2 {
+    font-family: SuperMario256;
+}
+
+.wrapper {
+    display: flex;
+    flex-flow: column wrap;
+    align-content: center;
+    justify-content: center;
+    max-width: 90vw;
+    margin: auto;
+}
+
+header {
+    display: flex;
+    flex-flow: row wrap;
+    justify-content: space-between;
+    align-items: center;
+    align-content: flex-start;
+    background-color: #FFD40E;
+    color: #E81B1F;
+    min-width: fit-content;
+    font-size: 1rem;
+    padding: .3em;
+}
+
+.site-title {
+    font-size: 2em;
+}
+
+.nav-links {
+    list-style-type: none;
+    display: flex;
+    flex-wrap: wrap;
+}
+
+.nav-links li {
+    margin: .3em;
+}
+
+.banner {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: #E81B1F;
+    height: 7em;
+    font-size: 1rem;
+}
+
+.imgLuigi {
+    background-image: url(./images/luigi.png);
+    /* height: 95%; */
+    background-position: center;
+    background-size: contain;
+    background-repeat: no-repeat;
+    height: 6em;
+    width: 6em;
+}
+
+.content {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    min-width: fit-content;
+    color: #E81B1F;
+    font-size: 1rem;
+}
+
+.content h2 {
+    font-size: 1.5em;
+    margin: 0.6em;
+}
+
+.content p {
+    font-family: Arial, Helvetica, sans-serif;
+    font-weight: bolder;
+    line-height: 1.1em;
+    margin-bottom: 0.6em;
+}
+
+.contact {
+    text-align: center;
+}
+
+.serviceIMG {
+    float: left;
+    height: 8em;
+    margin-right: 1em;
+    margin-bottom: 1em;
+}
+
+.baddie-row {
+    display: flex;
+    width: 100%;
+    justify-content: space-around;
+}
+
+.baddie {
+    height: 3em;
+    width: 3em;
+    margin: 1em;
+}
+
+.disclaimer {
+    color: gray;
+    font-size: small;
+    text-align: left;
+    font-weight: lighter;
+}
+
+.social {
+    font-size: 1rem;
+    display: flex;
+    flex-flow: row wrap;
+    justify-content: space-around;
+    align-items: center;
+    align-content: center;
+    background-color: #FFD40E;
+    padding: 2px;
+    min-height: fit-content;
+}
+
+footer {
+    font-size: 1rem;
+    display: flex;
+    flex-flow: column;
+    align-items: center;
+    align-content: center;
+    background-color: #E81B1F;
+    text-align: center;
+    font-weight: bold;
+    padding: 0.3em;
+    min-width: fit-content;
+}
+
+/*
+Styles for social links from Font Awesome
+*/
+.fab {
+    font-size: 1em;
+    text-align: center;
+    text-decoration: none;
+    margin: 2px 2px;
+    padding: 5px;
+    border-radius: 50%;
+    color: #E81B1F;
+}
+
+.fab:hover {
+    opacity: 0.7;
+}
+
+@media screen and (min-width: 600px) {
+    html {
+        font-size: 18px;
+    }
+
+    header {
+        padding: 0.6em;
+    }
+    
+    .banner {
+        min-height: 12em;
+    }
+    .imgLuigi {
+        width: 10em;
+        height: 10em;
+    }
+    .content p {
+        width: 80%;
+        line-height: 1.2em;
+        margin-bottom: 0.8em;
+    }
+    .baddie {
+        height: 4em;
+        width: 4em;
+    }
+}
+
+@media screen and (min-width: 800px) {
+    html {
+        font-size: 20px;
+    }
+
+    header {
+        min-height: 5em;
+    }
+
+    .banner {
+        min-height: 15em;
+    }
+    .imgLuigi {
+        width: 12em;
+        height: 12em;
+    }
+
+    .content p {
+        line-height: 1.4em;
+        margin-bottom: 1em;
+    }
+
+    .baddie {
+        height: 5em;
+        width: 5em;
+    }
+}
