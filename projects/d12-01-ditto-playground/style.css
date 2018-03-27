@@ -1,0 +1,476 @@
+html {
+    font-size: 11.2px;
+
+}
+
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+    font-weight: 400;
+}
+
+body {
+    font-family: 'Libre Baskerville', sans-serif;
+    color: #325050;
+    background-color: white;
+    font-size: 1.2em;
+}
+
+.wrapper {
+    display: grid;
+    grid-template-columns: 1fr .5fr;
+    grid-template-areas: "hdr hdr" "arc arc" "int int" "par par" "req req" "ban ban" "ftr ftr" "cho cho" "res res" "ext ext";
+}
+
+abbr {
+    border: none;
+    text-transform: uppercase;
+    font-size: 0.9em;
+    letter-spacing: 0.01em;
+}
+
+p {
+    font-size: 1.2em;
+    line-height: 2em;
+    margin: 0.75em 0;
+}
+
+header {
+    grid-area: hdr;
+    font-size: 1rem;
+    text-align: center;
+    height: 230px;
+    padding: 1.8em 0 6.25em 0;
+    border-top: solid 10px rgba(19, 67, 71, 0.9);
+    background-attachment: fixed, fixed, fixed, scroll;
+    background-image: url(images/contours.png), url(images/noise.png), url(images/gridlines.png), url(images/huntington.jpg);
+    background-position: 0 0, 0 0, -5px -25px, 0 50%;
+    background-repeat: repeat, repeat, repeat, no-repeat;
+    background-size: auto, auto, auto, cover;
+}
+
+
+h1 {
+    font-family: 'Julius Sans One', sans-serif;
+    text-transform: uppercase;
+    color: white;
+    font-size: 3.2em;
+    padding-bottom: 0.2em;
+}
+
+h1::before {
+    display: inline-block;
+    width: 80px;
+    height: 80px;
+    position: relative;
+    top: 20px;
+    content: " ";
+    margin: -20px 20px 0 0;
+
+    background-image: url(images/enso.svg);
+    background-repeat: no-repeat;
+    background-size: 100%;
+    opacity: 0.6;
+}
+
+h2 {
+    color: rgba(255, 255, 255, 0.6);
+    font-size: 1.6em;
+    font-style: italic;
+}
+
+h2::before {
+    content: " ";
+    padding: 50px;
+}
+
+h3 {
+    font-family: 'Julius Sans One', sans-serif;
+    font-size: 1.8em;
+    text-transform: uppercase;
+    color: #2e484c;
+    /* margin: 0; */
+    margin-top: 1em;
+}
+
+li {
+    list-style-type: none;
+}
+
+a {
+    color: #0d8ba1;
+    transition: all 0.25s ease-out;
+    text-decoration: none;
+}
+
+a:visited {
+    color: #1a5952;
+}
+
+a:hover,
+a:focus {
+    color: #0599c2;
+    text-decoration: underline;
+}
+
+
+section {
+    font-size: 1rem;
+    margin: 0 auto;
+    padding: 2em 4.5em;
+}
+
+.intro {
+    background-color: #FFFFFF;
+    grid-area: int;
+}
+
+.intro a,
+.intro a:visited {
+    /* position: relative; */
+    /* display: inline-block; */
+    padding: 1px 10px 1px 32px;
+    margin: -1px -10px -1px -6px;
+    border-radius: 1px;
+    color: #809b7e;
+    font-family: 'Julius Sans One', sans-serif;
+    text-transform: uppercase;
+}
+
+.intro a:hover,
+.intro a:focus {
+    z-index: 2;
+    color: #fff;
+    background: #3d8a9f;
+    text-decoration: none;
+}
+
+.intro a::before {
+
+    display: inline-block;
+    position: absolute;
+    top: 6px;
+    left: 8px;
+    padding: 2px;
+
+
+
+    color: #a9b995;
+    background: #d9e1cd;
+    content: "D";
+    font-size: 16px;
+    text-indent: 0;
+
+
+    /* icomoon.io defaults */
+    font-family: 'verdemoderna';
+    font-weight: normal;
+    font-variant: normal;
+    text-transform: none;
+    line-height: 1;
+    transition: all 0.25s ease-out;
+}
+
+.intro a:hover::before {
+    color: #fff;
+    background: #357d93;
+}
+
+.participation {
+    grid-area: par;
+    background-attachment: scroll, scroll, fixed;
+    background-color: rgba(138, 188, 159, 0.5);
+    background-image: url(images/contours-opaque.png), url(images/gridlines-opaque.png), url(images/bamboo.png);
+    background-repeat: repeat, repeat, no-repeat;
+    background-size: auto, auto, cover;
+}
+
+.requirements {
+    background-color: #FFFFFF;
+    grid-area: req;
+}
+
+.banner {
+    grid-area: ban;
+    font-size: 2em;
+    line-height: 3em;
+    font-style: italic;
+    text-align: center;
+    color: rgba(255, 255, 255, 0.4);
+    background: #3e5d67;
+    background-attachment: fixed, fixed, fixed, scroll;
+    background-image: url(images/contours.png), url(images/gridlines.png), url(images/noise.png), url(images/koi.jpg);
+    background-position: 0 0, -5px -25px, 0 0, 0 50%;
+    background-repeat: repeat, repeat, repeat, no-repeat;
+    background-size: auto, auto, auto, cover;
+}
+
+.banner a {
+    font-style: normal;
+    color: rgba(255, 255, 255, 0.7);
+}
+
+footer {
+    padding: 2em;
+    background-color: #134347;
+    color: #8A9D9F;
+    grid-area: ftr;
+    display: flex;
+    justify-content: space-around;
+}
+
+footer a::before {
+    font-family: "verdemoderna";
+}
+
+footer a.html::before {
+    content: "5";
+}
+
+footer a.html:hover::before {
+    content: "%";
+}
+
+footer a.css::before {
+    content: "3";
+}
+
+footer a.css:hover::before {
+    content: "#";
+}
+
+footer a.cc::before {
+    content: "c";
+}
+
+footer a.cc:hover::before {
+    content: "C";
+}
+
+footer a.access::before {
+    content: "a";
+}
+
+footer a.access:hover::before {
+    content: "A";
+}
+
+footer a.git::before {
+    content: "g";
+}
+
+footer a.git:hover::before {
+    content: "G";
+}
+
+aside {
+    background-color: #edf4f0;
+    font-size: 1rem;
+}
+
+aside h3 {
+    display: none;
+}
+
+aside a {
+    color: #607476;
+    text-decoration: none;
+}
+
+/* aside a:hover,
+aside a:focus {
+    color: #49968e;
+    background-color: white;
+    opacity: 0.5;
+    background: linear-gradient(to right,  rgba(255,255,255,0) 0%, rgba(255,255,255,0.5) 50%, rgba(255,255,255,0) 100%);
+} 
+*/
+
+/* aside ul {
+    padding: 0;
+    margin: 0;
+    list-style: none;
+    overflow: hidden;
+}
+*/
+
+/* .archives li {
+    background: linear-gradient(to right,  rgba(255,255,255,0) 0%, rgba(255,255,255,0.5) 50%, rgba(255,255,255,0) 100%);
+}  */
+
+
+.chooser {
+    background-color: #EEF4F0;
+    grid-area: cho;
+}
+
+.designs-list {
+    display: grid;
+    grid-template-columns: 1fr;
+}
+
+.designs-list li {
+    display: block;
+    font-family: 'Libre Baskerville', sans-serif;
+    font-style: italic;
+    padding: 1em;
+    border-top: solid 1px #a0b9ad;
+    color: #c0cac3;
+}
+
+.designs-list li:first {
+    border: none;
+}
+
+.design-name {
+    display: block;
+    font-family: 'Julius Sans One', sans-serif;
+    text-transform: uppercase;
+    font-style: normal;
+    font-size: 1.2em;
+}
+
+.designer-name {
+    font-style: normal;
+}
+
+.archives {
+    /* z-index: 2; */
+    grid-area: arc;
+    background-color: transparent;
+    position: relative;
+    top: -70px;
+    /* min-height: 3em; */
+
+    font-family: 'Julius Sans One', sans-serif;
+    text-transform: uppercase;
+    text-align: center;
+
+
+    position: absolute;
+    top: 160px;
+    right: 0;
+    width: 100%;
+    height: 70px;
+    background: rgba(255,255,255,0.2);
+
+
+}
+
+.archives ul {
+    margin: 0;
+}
+
+.archives li {
+    /* line-height: 3.1em; */
+    width: 100%;
+    font-size: 1.4em;
+    /* height: 6.6em; */
+
+    padding: 0 71px;
+    line-height: 50px;
+    /* background-color: white;
+    opacity: 0.3; */
+}
+
+.archives a {
+    padding: 1em 0 0 0;
+    /* min-height: 5.2em; */
+    min-height: 6.25rem;
+
+    margin-bottom: 0.25em;
+    /* color: rgba(255, 255, 255, 0.65); */
+    color: pink;
+    transition-property: all;
+    transition-duration: 0.25s;
+    transition-timing-function: ease-out;
+}
+
+.archives a:hover {
+
+}
+
+.resources {
+    background-color: rgba(138, 188, 159, 0.5);
+    background-image: url(images/bamboo.png);
+    grid-area: res;
+}
+
+.res-list {
+    display: grid;
+    grid-template-columns: 1fr;
+}
+
+.resources li {
+    font-family: 'Julius Sans One', sans-serif;
+    text-transform: uppercase;
+    font-style: normal;
+    padding: 1em;
+    border-top: solid 1px #a0b9ad;
+    /* color: #c0cac3; */
+    color: #49968e;
+    font-size: 1.2em;
+}
+
+.resources li:first {
+    border-top: none;
+}
+
+/* 
+.resources li:last-child {
+    float: none;
+    width: auto;
+    border-bottom: solid 1px #a0b9ad;
+} */
+
+.extra {
+    background-color: #E1EAE5;
+    grid-area: ext;
+    visibility: hidden;
+    width: 0;
+}
+
+/* .chooser a,
+.resources a,
+.extra a {
+    color: #607476;
+} */
+
+@media screen and (min-width: 320px) {
+    .designs-list {
+        grid-template-columns: 1fr 1fr;
+    }
+    .res-list {
+        grid-template-columns: 1fr 1fr;
+    }
+}
+
+@media screen and (min-width: 800px) {
+    .wrapper {
+        display: grid;
+        grid-template-columns: 1fr .5fr;
+        grid-template-areas: "hdr hdr" "int cho" "par res" "req ext" "ban ban" "ftr ftr"
+    }
+
+    /* .archives {
+        right: 100px;
+    } */
+
+    .extra {
+        visibility: visible;
+        width: auto;
+    }
+}
+
+/*
+grid-template-areas:
+"hdr nav"
+"int cho"
+"par res"
+"req ."
+"ban ban"
+"ftr ftr"
+
+the period after req takes up a blank spot
+*/
