@@ -1,0 +1,17 @@
+* {
+    /* border: 1px solid chartreuse; */
+    min-width: 300px;
+}
+
+img {
+    width: 300px;
+}
+
+.spotContainer {
+    display: flex; 
+    justify-content: space-between;
+    margin: 20px;
+    border: 1px solid darkgray;
+    /* background-color: "lightblue"; */
+}
+
