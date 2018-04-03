@@ -1,0 +1,67 @@
+
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+html {
+    font-size: 16px;
+}
+
+.wrapper {
+    font-size: 1rem;
+}
+
+header {
+    background-color: black;
+    border: black solid 1px;
+    font-size: 1rem;
+    padding: 1em 1em;
+    grid-area: hdr;
+    display: grid;
+    grid-template-columns: 60% 40%;
+    align-items: center;
+}
+
+header h1 {
+    color: white;
+    font-size: 2em;
+}
+
+
+.hitlist {
+    padding: 1em 10%;
+    font-size: 1rem;
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    justify-items: center;
+}
+
+.enemy {
+    border: red 2px solid;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-end;
+    width: 200px;
+    height: 200px;
+    margin: 1em;
+
+    background-repeat: no-repeat;
+    background-size: cover;
+
+}
+
+.enemy p {
+    align-self: stretch;
+    text-align: center;
+    background: rgba(0, 0, 128,0.7);
+    color: white;
+    padding: 0.5em;
+
+}
+
+.enemyImg {
+    max-width: 200px;
+    height: 200px;
+}
