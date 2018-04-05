@@ -13,23 +13,38 @@ class DataDetails extends Component {
         }
     }
 
-componentDidMount() {
-    console.log(this.props.match.params.personId);
-    axios.get(swApiUrl + this.props.match.params.personId)
-        .then(response => {
-            console.log(response.data);
+
+    componentDidMount() {
+        this.getTheInfo(this.props.match.params.personId);
+    }
+
+    componentWillReceiveProps(newProps) {
+    // console.log(this.props.match.params.personId);
+    // console.log(newProps.match.params.personId);
+        if (this.props.match.params.personId !== newProps.match.params.personId) {
             this.setState({
-                person: response.data,
-                loading: false
+                loading: true
+            });
+            this.getTheInfo(newProps.match.params.personId);
+        }   
+    }
+
+    getTheInfo(personId) {
+        axios.get(swApiUrl + personId)
+            .then(response => {
+                console.log(response.data);
+                this.setState({
+                    person: response.data,
+                    loading: false
+                })
             })
-        })
-        .catch(err => {
-            this.setState({
-                errMsg: err.message,
-                loading: false
+            .catch(err => {
+                this.setState({
+                    errMsg: err.message,
+                    loading: false
+                })
             })
-        })
-}
+        }
 
 render() {
     const { person, errMsg, loading } = this.state;
