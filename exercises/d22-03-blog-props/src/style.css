@@ -1,0 +1,33 @@
+html {
+    font-size: 16px;
+}
+* {
+    margin: 0;
+    padding: 0;
+}
+
+.wrapper {
+    display: grid;
+    grid-template-rows: auto auto 1fr 200px;
+    grid-template-areas:
+    "nav"
+    "hdr"
+    "lst"
+    "ftr";
+
+}
+
+header {
+    grid-area: hdr; 
+    font-size: 1rem;
+}
+
+
+h1 {
+    font-family: "Open Sans", "Helvetica Neue", Helvetica, Arial, sans-serif;
+    /* font-weight: 800; */
+    font-size: 2em;
+    /* line-height: 43px; */
+    /* color: #0085a1; */
+    /* font-style: normal; */
+}
