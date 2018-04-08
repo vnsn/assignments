@@ -3,15 +3,24 @@ import React from 'react';
 function Badge(props) {
     const personList = props.people.map((personObj, index) => {
         const { firstName, lastName, email, birthCity, phone, faveFood, about } = personObj;
+
+        const formattedPhone = num => {
+            return (num.length === 10) ? num.replace(/(\d{3})(\d{3})(\d{4})/, "$1-$2-$3") : num;
+        }
+
+        let sectionStyle = {
+            backgroundColor: `${(index % 2 === 0) ? "red" : "navy" }`,
+        };
+
         return (
-            <div className="display-badge">
+            <div className="display-badge" style={sectionStyle} key={personObj.firstName + index}>
                 <div className="badge-header">
                     <h1 className="hello">HELLO</h1>
                     <p>my name is</p>
                 </div>
-                <div className="details" key={personObj.firstName + index}>
+                <div className="details">
                     <p>Name: {firstName} {lastName} </p>
-                    <p>Phone: {phone} </p>
+                    <p>Phone: {formattedPhone(phone)} </p>
                     <p>Place of birth: {birthCity} </p>
                     <p>Favorite food: {faveFood}  </p>
                     <p>Email: {email} </p>
@@ -23,7 +32,6 @@ function Badge(props) {
         )
     })
 
-
     return (
         <div>
             {personList}
@@ -33,12 +41,9 @@ function Badge(props) {
 
 export default Badge;
 
+
 /* 
 To do: 
-Make the color of the badge heading background alternate on each list item (ie Red, Blue, Red, Blue (see the dynamic rendering write up)
-
-Format the phone number on the badge display to show dashes in the number like the image in the exercise
-
 Once finished, re-enable validation code in canBeSubmitted() in ./Form !!
 
 */

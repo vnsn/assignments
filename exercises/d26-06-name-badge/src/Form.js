@@ -10,7 +10,7 @@ class Form extends Component {
                 lastName: props.lastName || "",
                 email: props.email || "",
                 birthCity: props.birthCity || "",
-                phone: props.phone || undefined,
+                phone: props.phone || "",
                 faveFood: props.faveFood || "",
                 about: props.about || ""
             },
@@ -51,14 +51,13 @@ class Form extends Component {
     }
 
     canBeSubmitted() {
-        // const { firstName, lastName, email, birthCity, phone, faveFood, about } = this.state.inputs;
-return true; // this is just for testing
+        const { firstName, lastName, email, birthCity, phone, faveFood, about } = this.state.inputs;
 
-        // return (
-        //     firstName.length > 2 && lastName.length > 2 &&
-        //     email.length > 2 && birthCity.length > 2 &&
-        //     phone.length > 2 && faveFood.length > 2 && about.length > 2
-        // );
+        return (
+            firstName.length > 2 && lastName.length > 2 &&
+            email.length > 2 && birthCity.length > 2 &&
+            phone.length > 2 && faveFood.length > 2 && about.length > 2
+        );
     }
 
     render() {

@@ -6,16 +6,21 @@ body {
     font-family: Arial, Helvetica, sans-serif;
 }
 
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
 header {
     background-image: url("https://coursework.vschool.io/content/images/2015/07/hellobadge.jpg");
     height: 35vh;
     min-height: 180px;
     background-size: cover;
-    /* margin-bottom: 5em; */
 }
 
 .name-form {
-    margin: 1em;
+    margin: 1em 2em;
     border: 1px solid #606060;
     border-radius: 5px;
     display: grid;
@@ -33,14 +38,14 @@ header {
 
 .display-badge {
     font-size: 1rem;
-    margin: 1em;
-    background-color: red;
+    margin: 1em 2em;
+    /* background-color: red; */
     border-radius: 10px;
+    box-shadow: 10px 0px 1px 0px rgba(188,188,188,1);
     display: flex;
     flex-direction: column;
     align-items: center;
     padding: 0 0 30px 0;
-
 }
 
 .badge-header {
@@ -85,17 +90,17 @@ header {
 
 }
 
-
-
 input{
     display: inline-block;
     border: 1px solid #606060;
+    padding: 0.5em;
 }
 
 textarea {
     grid-area: txt;
     display: inline-block;
     border: 1px solid #606060;
+    padding: 0.5em;    
 }
 
 button {
@@ -109,7 +114,7 @@ button {
     width: 7em;
 }
 
-.details p {
+.details>p {
     display: inline-block;
     margin: 0 3em;
 }
@@ -118,6 +123,7 @@ button {
     grid-area: abt;
     border: 1px solid #606060;
     margin: 0 3em;
+    padding: 0.5em;
     margin-bottom: 1em;
     min-height: 6em;
 }
