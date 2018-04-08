@@ -8,17 +8,11 @@ The input fields should NOT directly update the badge fields (meaning when you t
 import React from 'react';
 import Form from "./Form";
 
-function App() {
+function App(props) {
     return (
         <div className="wrapper">
-            <header><h1>Hello, my name is</h1></header>
+            <header></header>
             <Form />
-            <div className="badge">
-                <h2>Badge:</h2>
-                <div className="details">
-
-                </div>
-            </div>
         </div>
     )
 }
