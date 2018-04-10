@@ -1,12 +1,12 @@
 import React from 'react';
 
-
 import Form from "./Form";
 import List from "./List";
 
 function App(props) {
     return (
         <div className="app">
+            <p>I am the ugly things exercise and I have no styling so I am also ugly. :-)</p>
             <Form />
             <List />
         </div>

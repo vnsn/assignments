@@ -8,11 +8,12 @@ But since thingReducer is the _default_ export from ./cats, we can call it whate
 */
 
 import things from "./things";
+
+// gather all the reducers and cram them together into one store and export it.
 const store = createStore(combineReducers({things})) ;
 
-store.subscribe(() => {
-    console.log(store.getState());
-})
-// gather all the reducers and cram them together into one store and export it.
+// store.subscribe(() => {
+//     console.log(store.getState());
+// })
 
 export default store;

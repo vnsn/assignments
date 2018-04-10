@@ -20,13 +20,20 @@ const thingReducer = (state = initialState, action) => {
             }
         case "EDIT_THING":
             return {
-                data: state.data.filter((cat, i) => i !== action.index)
+                data: state.data.map((cat, i) => {
+                    if (i === action.index) {
+                        return action.newThing;
+                    } else {
+                        return cat;
+                    }
+                })
             }    
         default:
             return state;
     }
 }
 
+// these are "action creators"
 export const addThing = thing => {
     return {
         type: "ADD_THING",
@@ -41,10 +48,11 @@ export const removeThing = index => {
     }
 }
 
-export const editThing = index => {
+export const editThing = (index, newThing) => {
     return {
         type: "EDIT_THING",
-        index
+        index,
+        newThing 
     }
 }
 

@@ -1,6 +1,6 @@
 import React from 'react'
 import {connect} from "react-redux";
-import {removeThing, editThing} from "./redux/things"
+import {removeThing} from "./redux/things"
 
 import Item from "./Item";
 
@@ -11,7 +11,6 @@ function List(props) {
         <Item
             key={thing.imgUrl + i}{...thing} 
             removeThing={props.removeThing}
-            editThing={props.editThing}
             index={i}
          />)
     return (
