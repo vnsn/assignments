@@ -1,0 +1,173 @@
+* {
+  /* border: 1px solid black; */
+  margin: 0;
+  padding: 0;
+}
+
+html {
+  font-size: 16px;
+}
+
+body {
+  font-size: 1rem;
+  font-family: sans-serif;
+}
+
+.wrapper {
+  font-size: 1rem;
+  display: grid;
+  grid-template-columns: 1fr;
+  grid-template-areas: "header" "nav" "content" "points" "footer";
+  /* align-items: center; */
+  /* align-content: stretch; */
+  text-align: center;
+}
+
+li {
+  list-style-type: none;
+}
+
+header {
+  grid-area: header;
+  font-size: 1rem;
+  background-color: hotpink;
+  padding: 1.5em 0;
+}
+
+nav {
+  grid-area: nav;
+  font-size: 1rem;
+  background-color: lightgray;
+  color: white;
+  display: flex;
+  align-items: center;
+}
+
+nav ul,
+.points ul {
+  width: 100%;
+  display: flex;
+  justify-content: space-evenly;
+  align-items: center;
+}
+
+nav li {
+  display: inline-block;
+  font-size: 1em;
+  line-height: 2em;
+}
+
+nav a {
+  text-decoration-line: none;
+}
+
+.points {
+  grid-area: points;
+  font-size: 1rem;
+  padding: 0.5em;
+  background-color: paleturquoise;
+}
+
+.content {
+  grid-area: content;
+  font-size: 1rem;
+  padding: 1em 0.5em;
+  background-color: coral;
+}
+
+.content h3 {
+  margin: 1em;
+}
+
+.content ul {
+  margin: 0.5em;
+}
+
+footer {
+  grid-area: footer;
+  font-size: 1rem;
+  padding: 0.5em;
+  background-color: forestgreen;
+  color: white;
+}
+
+footer p {
+  font-size: 0.75em;
+}
+
+footer a,
+a:visited {
+  color: #990000;
+}
+
+.tmdb {
+  width: 300px;
+  height: 300px;
+
+  background-image: url("./powered-by-tmdb.png");
+  background-size: contain;
+  background-repeat: no-repeat;
+  background-origin: content-box;
+  background-position: center;
+  color: #01d277;
+}
+
+@media screen and (min-width: 600px) {
+  html {
+    font-size: 18px;
+  }
+
+  .wrapper {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    grid-template-areas: "header nav" "content content" "points points" "footer footer";
+  }
+}
+
+@media screen and (min-width: 800px) {
+  html {
+    font-size: 20px;
+  }
+  
+  .wrapper {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr 1fr;
+    grid-template-areas: 
+    "header header header points" 
+    "nav content content content" 
+    "footer footer footer footer";
+  }
+
+  header h1 {
+    font-size: 3em;
+  }
+
+  nav {
+    flex-direction: column;
+    align-items: flex-start;
+    justify-items: center;
+    background-color: navy;
+  }
+
+  nav ul {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-evenly;
+  align-items: center;
+}
+
+  nav li {
+    font-size: 1.5em;
+  }
+
+  .points {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
+  }
+
+  .points ul {
+    flex-direction: column;
+  }
+}
