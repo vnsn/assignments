@@ -12,7 +12,7 @@ function BlogList() {
         />)
 
     return (
-        <div>
+        <div className="bloglist">
             {blogList}
         </div>
     );

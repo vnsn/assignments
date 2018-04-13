@@ -2,11 +2,14 @@ import React from 'react';
 
 function Footer() {
     return (
-        <div>
-            <p>Twitter Facebook Github icons</p>
-            <p>Copyright &Copy; Your Website 2018</p>
-
-        </div>
+        <footer>
+            <div className="social">
+                <i className="fab fa-twitter-square fa-3x"></i>
+                <i className="fab fa-facebook-square fa-3x"></i>
+                <i className="fab fa-github-square fa-3x"></i>
+            </div>
+            <p>Copyright &copy; Your Website 2018</p>
+        </footer>
     )
 }
 

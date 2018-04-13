@@ -1,33 +1,126 @@
 html {
-    font-size: 16px;
+    font-size: 12px;
 }
+
 * {
     margin: 0;
     padding: 0;
 }
 
+body {
+    font-family: "Open Sans", "Helvetica Neue", Helvetica, Arial, sans-serif;
+    color: darkgrey;
+}
+
 .wrapper {
     display: grid;
-    grid-template-rows: auto auto 1fr 200px;
-    grid-template-areas:
-    "nav"
-    "hdr"
-    "lst"
-    "ftr";
-
+    grid-template-rows: 50vh 1fr 200px;
+    grid-template-areas: "hdr" "lst" "ftr";
 }
 
 header {
-    grid-area: hdr; 
+    grid-area: "hdr";
     font-size: 1rem;
+    display: grid;
+    grid-template-rows: 4em 1fr;
+}
+
+.header-image {
+    background-image: url("https://blackrockdigital.github.io/startbootstrap-clean-blog/img/home-bg.jpg");
+    background-size: cover;
+    background-repeat: no-repeat;
+    color: white;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.header-image h1 {
+    font-size: 6em;
+}
+
+nav {
+    grid-area: "nav";
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0 10%;
+    color: black;
+}
+
+nav h1 {
+    font-size: 2em;
+}
+
+.bloglist {
+    grid-area: "lst";
+    padding: 2em 10%;
+}
+
+.post {
+    border-top: 1px solid gray;
+    font-size: 1rem;
+    padding: 1em 0 2em 0;
+}
+
+.post:first-of-type {
+    border-top: none;
 }
 
 
-h1 {
-    font-family: "Open Sans", "Helvetica Neue", Helvetica, Arial, sans-serif;
-    /* font-weight: 800; */
+
+.post h1 {
+    font-size: 3em;
+    font-weight: 800;
+    font-style: normal;
+    margin: 0.5em 0;
+}
+
+.post h2 {
     font-size: 2em;
-    /* line-height: 43px; */
-    /* color: #0085a1; */
-    /* font-style: normal; */
+    margin: 0.5em 0;
+}
+
+.post a,
+.post a:visited {
+    text-decoration-line: none;
+    color: #222222;
+}
+
+.post a:hover {
+    color: #0085a1;
+}
+
+.post p:last-child {
+    font-style: italic;
+    font-size: 1.2em;
+}
+
+footer {
+    font-size: 1rem;
+    border-top: 1px solid lightgray;
+    display: grid;
+    grid-template-rows: 2fr 1fr;
+    justify-items: center;
+}
+
+footer p {
+    color: gray;
+}
+
+.social {
+    /* border: 1px solid red; */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 0;
+    margin: 0;
+}
+
+.social i {
+    margin: 0 0.25em;
+    padding: 0;
+    display: inline-block;
+    border-radius: 100%;
 }
