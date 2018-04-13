@@ -1,40 +1,32 @@
 import React, { Component } from 'react';
+import {withRouter} from "react-router-dom";
 
 import Footer from "./Footer";
 import Header from "./Header";
 import Nav from "./Nav";
-import Points from "./Points";
+// import Points from "./Points";
+import Content from "./Content";
 
-import Test from "./test";
+import { connect } from "react-redux";
+import { getMovies } from "./redux/movies";
 
-class App extends Component {
+ class App extends Component {
+
+  componentDidMount() {
+    this.props.getMovies();
+  }
+
   render() {
     return (
       <div className="wrapper">
         <Header />
         <Nav />
-
-        <Points />
-
-        <section className="content">
-          <h3>I am the section that will get swapped out with Router</h3>
-          <h3>Content - I'm the question</h3>
-
-
-          <ul>
-            <li>I will be an option</li>
-            <li>I will be an option</li>
-            <li>I will be an option</li>
-            <li>I will be an option</li>
-          </ul>
-        </section>
-
+        <Content />
+        {/* <Points /> */}
         <Footer />
-         
-
       </div>
     );
   }
 }
 
-export default App;
+export default withRouter(connect(null, {getMovies} )(App));

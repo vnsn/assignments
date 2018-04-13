@@ -3,8 +3,7 @@ import React from 'react';
 function Header(props) {
     return (
         <header>
-          <h1>Welcome to React</h1>
-          <h2>This is my subtitle</h2>
+          <h1>Cast Lists!</h1>
         </header>
     );
 }

@@ -1,7 +1,7 @@
 * {
-  /* border: 1px solid black; */
   margin: 0;
   padding: 0;
+  box-sizing: border-box;
 }
 
 html {
@@ -11,6 +11,7 @@ html {
 body {
   font-size: 1rem;
   font-family: sans-serif;
+  color: #1D3461;
 }
 
 .wrapper {
@@ -18,9 +19,6 @@ body {
   display: grid;
   grid-template-columns: 1fr;
   grid-template-areas: "header" "nav" "content" "points" "footer";
-  /* align-items: center; */
-  /* align-content: stretch; */
-  text-align: center;
 }
 
 li {
@@ -30,15 +28,17 @@ li {
 header {
   grid-area: header;
   font-size: 1rem;
-  background-color: hotpink;
-  padding: 1.5em 0;
+  padding: 1.5em 1em;
+  background-clip: padding-box;
+  border-bottom: 1px solid #53544D;
+  color: #990000;
 }
 
 nav {
   grid-area: nav;
   font-size: 1rem;
-  background-color: lightgray;
-  color: white;
+  color: #990000;
+  border-bottom: 1px solid #53544D;
   display: flex;
   align-items: center;
 }
@@ -47,6 +47,7 @@ nav ul,
 .points ul {
   width: 100%;
   display: flex;
+  flex-wrap: wrap;
   justify-content: space-evenly;
   align-items: center;
 }
@@ -54,32 +55,101 @@ nav ul,
 nav li {
   display: inline-block;
   font-size: 1em;
-  line-height: 2em;
+  margin: 0.25em;
 }
 
 nav a {
   text-decoration-line: none;
 }
 
+nav a, nav a:visited, .content a, .content a:visited {
+  color:   #00AFB5;
+}
+
+nav a:hover {
+  text-decoration-line: underline;
+}
+
 .points {
   grid-area: points;
   font-size: 1rem;
   padding: 0.5em;
-  background-color: paleturquoise;
+  background-color: #00AFB5;
+  background-clip: padding-box;
+  border: dotted 4px #53544D;
+  text-align: center;
 }
 
 .content {
   grid-area: content;
   font-size: 1rem;
-  padding: 1em 0.5em;
-  background-color: coral;
+  text-align: left;
 }
 
-.content h3 {
-  margin: 1em;
+.content h2, .content h3 {
+  margin-bottom: 1em;
 }
 
-.content ul {
+.content p {
+  margin: 0.75em 0;
+}
+
+.home {
+  padding: 0;
+  background-image: url("./elijah-flores-99207-unsplash.jpg");
+  background-color: white;
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-clip: padding-box;
+  min-height: 50vh;
+  height: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.home button {
+  flex-grow: 0;
+  flex-shrink: 1;
+  flex-basis: 30%;
+  /* flex: 0 1 40%; */
+  /* max-width: 20ch; */
+  font-size: 2em;
+  padding: 10% 5%;
+  background-color: #990000;
+  border: 1px solid black;
+  border-radius: 50%;
+  font-weight: bold;
+}
+
+.home a {
+  text-decoration-line: none;
+}
+
+.home a, .home a:visited {
+  color: black;
+}
+
+.home a:hover {
+  color: white;
+}
+
+.about {
+  padding: 0.25em 0.5em;
+}
+
+.about p {
+  font-size: 1.3em;
+}
+
+.game {
+  padding: 0.25em 0.5em;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.game ul {
   margin: 0.5em;
 }
 
@@ -87,29 +157,39 @@ footer {
   grid-area: footer;
   font-size: 1rem;
   padding: 0.5em;
-  background-color: forestgreen;
-  color: white;
+  border-bottom: 1px solid #53544D;
 }
 
 footer p {
   font-size: 0.75em;
 }
 
-footer a,
-a:visited {
+footer a, footer a:visited {
   color: #990000;
 }
 
 .tmdb {
+  display: none;
   width: 300px;
   height: 300px;
-
-  background-image: url("./powered-by-tmdb.png");
+  background-image: url("./powered-by-tmdb-blue.png");
   background-size: contain;
   background-repeat: no-repeat;
   background-origin: content-box;
   background-position: center;
-  color: #01d277;
+  color: #081c24;
+}
+
+.miniTmdb {
+  display: flex;
+  align-items: center;
+}
+
+.mini {
+  display: inline-block;
+  height: 3em;
+  width: 3em;
+  margin-right: 0.5em;
 }
 
 @media screen and (min-width: 600px) {
@@ -122,20 +202,36 @@ a:visited {
     grid-template-columns: 1fr 1fr;
     grid-template-areas: "header nav" "content content" "points points" "footer footer";
   }
+
+  nav {
+
+    background-clip: padding-box;
+  }
+
+  footer {
+    text-align: center;
+  }
+
 }
 
-@media screen and (min-width: 800px) {
+@media screen and (min-width: 900px) {
   html {
     font-size: 20px;
   }
   
   .wrapper {
     display: grid;
-    grid-template-columns: 1fr 1fr 1fr 1fr;
+    grid-template-columns: minmax(auto, 225px) 1fr 1fr 1fr;
     grid-template-areas: 
-    "header header header points" 
+    "header header header header" 
     "nav content content content" 
     "footer footer footer footer";
+  }
+
+  /* "header header header points"  */
+
+  header {
+    padding-left: 70px;
   }
 
   header h1 {
@@ -143,25 +239,31 @@ a:visited {
   }
 
   nav {
+    background-color: unset;
     flex-direction: column;
-    align-items: flex-start;
-    justify-items: center;
-    background-color: navy;
+    border: none;
+    border-right: 1px solid #53544D;
   }
 
   nav ul {
-  width: 100%;
-  display: flex;
   flex-direction: column;
-  justify-content: space-evenly;
-  align-items: center;
 }
 
   nav li {
     font-size: 1.5em;
   }
 
+  nav .tmdb {
+    display: inline;
+    max-width: 8em;
+}
+
+  footer {
+    border-bottom: unset;
+  }
   .points {
+    border: 1px solid #53544D;
+    border-radius: 100px 0;
     display: flex;
     flex-direction: column;
     justify-content: space-evenly;
@@ -170,4 +272,21 @@ a:visited {
   .points ul {
     flex-direction: column;
   }
+
+  footer {
+    background-color: #00AFB5;
+    background-clip: padding-box;
+
+  }
+
+  /* 
+  footer {
+    background-clip: padding-box;
+    border: 1px solid #53544D;
+  } 
+  */
+
+    /* fun but too wacky shape */
+    /* border-radius:  120px 120px 30px 30px/30px 30px 120px 120px; */
+
 }
