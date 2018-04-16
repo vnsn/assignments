@@ -5,9 +5,9 @@ import movieReducer from "./movies";
 
 const store = createStore(combineReducers({movieStore: movieReducer}), applyMiddleware(thunk));
 
-// store.subscribe(() => {
-//     console.log(store.getState());
-// })
+store.subscribe(() => {
+    console.log(store.getState());
+})
 
 export default store;
 

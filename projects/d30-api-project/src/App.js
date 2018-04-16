@@ -8,12 +8,13 @@ import Nav from "./Nav";
 import Content from "./Content";
 
 import { connect } from "react-redux";
-import { getMovies } from "./redux/movies";
+import { initializeApp } from "./redux/movies";
 
  class App extends Component {
 
   componentDidMount() {
-    this.props.getMovies();
+    this.props.initializeApp();
+    
   }
 
   render() {
@@ -29,4 +30,4 @@ import { getMovies } from "./redux/movies";
   }
 }
 
-export default withRouter(connect(null, {getMovies} )(App));
+export default withRouter(connect(null, {initializeApp} )(App));

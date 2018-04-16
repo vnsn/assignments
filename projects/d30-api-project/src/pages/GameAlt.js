@@ -5,26 +5,9 @@ import { getCast, saveMovieData } from "../redux/movies";
 
 class GameAlt extends Component {
   componentDidMount() {
-    // console.log("i am comp did mount in GameAlt and this is this.props.match.params");
-    // console.log(this.props.match.params);
-
     this.props.saveMovieData(this.props.match.params);
     this.props.getCast(this.props.match.params.id);
-
-    // this.props.chooseRandomMovie(this.props.match.params.movieID);
   }
-
-  // componentWillReceiveProps(newProps) {
-
-  //   console.log("i am comp will receive props in GameAlt and this is newProps.movieList");
-  //   console.log(newProps.movieList);
-
-  //   if (newProps.movieList.length > 0 && this.props.movieList.length !== newProps.movieList.length) {
-  //     // newProps.getCast(newProps.movieList);
-  //     newProps.chooseRandomMovie(newProps.movieList);
-
-  //   }
-  // }
 
   render(props) {
     const { loading, errMsg, castList, currMovie } = this.props;

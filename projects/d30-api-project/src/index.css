@@ -143,15 +143,45 @@ nav a:hover {
 }
 
 .game {
+  font-size: 1rem;
   padding: 0.25em 0.5em;
   display: flex;
   flex-direction: column;
-  align-items: center;
+  /* align-items: center; */
+  justify-content: space-between;
 }
 
 .game ul {
-  margin: 0.5em;
+  margin: 1em;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+
 }
+
+.game li {
+  padding: 1em;
+  display: inline-block;
+  text-align: center;
+
+}
+
+.game button {
+  align-self: center;
+  padding: 1em;
+  border: 5px solid #990000;
+  border-radius: 10px;
+  background-color: #00AFB5;
+  font-weight: bold;
+}
+
+.game .nextQ {
+  background-color: #00AFB5;
+}
+
+.game .answer {
+  background-color: white;
+}
+
 
 footer {
   grid-area: footer;

@@ -1,37 +1,66 @@
 import React, { Component } from 'react';
 
 import { connect } from "react-redux";
-import { getCast } from "../redux/movies";
+import { createQuestion } from "../redux/movies";
 
 class Game extends Component {
-  componentDidMount() {
-    console.log("i am comp did mount and this is this.props.movieList");
-    console.log(this.props.movieList);
-    // this.props.getCast(this.props.movieList);
-  }
+  constructor() {
+    super()
 
-  componentWillReceiveProps(newProps) {
+    this.state = {
+      isAnswered: false
+    }
+    this.style = {
+      red: {
+        backgroundColor: "red",
+      },
+      white: {
+        backgroundColor: "white",
+      },
+      green: {
+        backgroundColor: "green",
 
-    console.log("i am comp will receive props and this is this.props.movieList");
-    console.log(this.props.movieList);
-
-    if (newProps.movieList.length > 0 && this.props.movieList.length !== newProps.movieList.length) {
-      newProps.getCast(newProps.movieList);
-      
+      }
     }
   }
 
+
+  componentDidMount() {
+    this.props.createQuestion(this.props.movieList, this.props.wrongPool);
+
+  }
+
+  // componentWillReceiveProps(newProps) {
+  //   if (newProps.movieList.length > 0 && this.props.movieList.length !== newProps.movieList.length) {
+  //     this.props.createQuestion();
+  //   }
+  // }
+
+  handleClick(e) {
+    this.setState({ isAnswered: false });
+    this.props.createQuestion(this.props.movieList, this.props.wrongPool);
+  }
+
+  handleAnswer(e) {
+    console.log(e.target);
+    const { name, value } = e.target;
+    console.log(name);
+    this.setState({ isAnswered: true })
+
+
+  }
+
   render() {
-    const { castList, loading, errMsg, title, releaseDate } = this.props.currMovie;
+    const { loading, errMsg, currMovie, answers } = this.props;
+    const { title, releaseDate } = currMovie;
 
-    // need to pick 3 random cast members.
-    // then pick a random person who is NOT in the movie
 
-    const castItems = castList.map((person, i) => {
+    const castItems = answers.map((person, index) => {
       return (
-        <ul className="castlist" key={person.name + i}>
-          <li>{person.name}</li>
-        </ul>
+        <li key={person.name + index}  >
+          <button className="answer" name={person.name} onClick={(e) => this.handleAnswer(e)} style={!this.state.isAnswered ? this.style.white : person.correctAnswer ? this.style.red : this.style.green}>{person.name}</button>
+        </li>
+
       );
     })
 
@@ -46,12 +75,19 @@ class Game extends Component {
     } else {
       return (
         <section className="content game">
-          <h3>Cast Members for the movie {title} (released on {releaseDate}):</h3>
-          {castItems}
+          <h3>Which actor was NOT in {title} (released on {releaseDate}):</h3>
+          <ul>
+            {castItems}
+          </ul>
+          <button className="nextQ" onClick={(e) => this.handleClick(e)}>Next Question</button>
         </section>
       )
     }
   }
 }
 
-export default connect(state => state.movieStore, { getCast })(Game);
+export default connect(state => state.movieStore, { createQuestion })(Game);
+
+// NEED TO MAKE THE "NEXT Q" BUTTON HIDDEN UNTIL THE USER CHOOSES AN ANSWER AND IT HAS BEEN EVALUATED AND THE CORRECT ANSWER REVEALED. 
+
+// IF THERE'S TIME, PULL JUST THE YEAR OUT OF RELEASE_DATE AND USE THAT.
