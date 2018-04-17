@@ -159,14 +159,14 @@ export const createQuestion = (movieList, wrongPool) => {
                     let answerObj = {
                         id: cast_no_dup[i].id,
                         name: cast_no_dup[i].name,
-                        correctAnswer: true
+                        correctAnswer: false
                     }
                     choices.push(answerObj);
                 }
 
                 let wrongAnswer = getWrongAnswer(castList, wrongPool);
 
-                choices = [...choices, { name: wrongAnswer.name, correctAnswer: false }];
+                choices = [...choices, { id: wrongAnswer.id, name: wrongAnswer.name, correctAnswer: true }];
 
                 // console.log("before shuffle");
                 // console.log(choices);

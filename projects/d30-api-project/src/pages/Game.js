@@ -2,6 +2,8 @@ import React, { Component } from 'react';
 
 import { connect } from "react-redux";
 import { createQuestion } from "../redux/movies";
+import { incrementQuestions, incrementCorrect } from "../redux/pointsreducer";
+
 
 class Game extends Component {
   constructor() {
@@ -33,7 +35,14 @@ class Game extends Component {
     console.log(e.target);
     const { name, value } = e.target;
     console.log(name);
-    this.setState({ isAnswered: true })
+    console.log(value)
+    this.setState({ isAnswered: true });
+
+    this.props.incrementQuestions();
+
+    console.log(this.props.answers);
+
+
   }
 
   render() {
@@ -44,7 +53,7 @@ class Game extends Component {
     const castItems = answers.map((person, index) => {
       return (
         <li key={person.name + index}  >
-          <button className="answer" name={person.name} onClick={(e) => this.handleAnswer(e)} style={!this.state.isAnswered ? this.style.white : person.correctAnswer ? this.style.white : this.style.green}>{person.name}</button>
+          <button className="answer" name={person.name} value={person.id} onClick={(e) => this.handleAnswer(e)} style={!this.state.isAnswered ? this.style.white : person.correctAnswer ? this.style.green : this.style.white}>{person.name}</button>
         </li>
 
       );
@@ -72,7 +81,9 @@ class Game extends Component {
   }
 }
 
-export default connect(state => state.movieStore, { createQuestion })(Game);
+export default connect(state => state.movieStore, { createQuestion, incrementQuestions, incrementCorrect })(Game);
+
+// export default connect(state => state.movieStore, { createQuestion, incrementQuestions, incrementCorrect })(Game);
 
 // NEED TO MAKE THE "NEXT Q" BUTTON HIDDEN UNTIL THE USER CHOOSES AN ANSWER AND IT HAS BEEN EVALUATED AND THE CORRECT ANSWER REVEALED. 
 

@@ -4,7 +4,7 @@ import {withRouter} from "react-router-dom";
 import Footer from "./Footer";
 import Header from "./Header";
 import Nav from "./Nav";
-// import Points from "./Points";
+import Points from "./Points";
 import Content from "./Content";
 
 import { connect } from "react-redux";
@@ -23,7 +23,7 @@ import { initializeApp } from "./redux/movies";
         <Header />
         <Nav />
         <Content />
-        {/* <Points /> */}
+        <Points />
         <Footer />
       </div>
     );

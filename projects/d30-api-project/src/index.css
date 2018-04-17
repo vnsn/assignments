@@ -257,7 +257,7 @@ footer a, footer a:visited {
     display: grid;
     grid-template-columns: minmax(auto, 225px) 1fr 1fr 1fr;
     grid-template-areas: 
-    "header header header header" 
+    "header header header points" 
     "nav content content content" 
     "footer footer footer footer";
   }
