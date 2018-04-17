@@ -4,7 +4,6 @@ import { connect } from "react-redux";
 import { createQuestion } from "../redux/movies";
 import { incrementQuestions, incrementCorrect } from "../redux/pointsreducer";
 
-
 class Game extends Component {
   constructor() {
     super()
@@ -78,8 +77,6 @@ class Game extends Component {
 
 export default connect(state => state.movieStore, { createQuestion, incrementQuestions, incrementCorrect })(Game);
 
-// export default connect(state => state.movieStore, { createQuestion, incrementQuestions, incrementCorrect })(Game);
-
-// NEED TO MAKE THE "NEXT Q" BUTTON HIDDEN UNTIL THE USER CHOOSES AN ANSWER AND IT HAS BEEN EVALUATED AND THE CORRECT ANSWER REVEALED. 
+// WANT TO MAKE THE "NEXT Q" BUTTON HIDDEN UNTIL THE USER CHOOSES AN ANSWER AND IT HAS BEEN EVALUATED AND THE CORRECT ANSWER REVEALED. 
 
 // IF THERE'S TIME, PULL JUST THE YEAR OUT OF RELEASE_DATE AND USE THAT.
