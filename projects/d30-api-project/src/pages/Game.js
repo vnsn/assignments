@@ -65,7 +65,7 @@ class Game extends Component {
     } else {
       return (
         <section className="content game">
-          <h3>Which actor was NOT in {title} (released on {releaseDate}):</h3>
+          <h3>Which actor was NOT in {title} (released on {releaseDate})?</h3>
           <ul>
             {castItems}
           </ul>
