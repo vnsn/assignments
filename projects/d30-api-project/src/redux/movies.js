@@ -9,7 +9,7 @@ const initialState = {
     },
     castList: [],
     answers: [],
-    wrongPool: [],
+    answerPool: [],
     loading: true,
     errMsg: ""
 }
@@ -30,10 +30,10 @@ const movieReducer = (state = initialState, action) => {
                 loading: false
             };
 
-        case "SET_WRONG_PEOPLE_POOL":
+        case "SET_ANSWER_POOL":
             return {
                 ...state,
-                wrongPool: action.wrongPool,
+                answerPool: action.answerPool,
                 loading: false
             };
         case "CREATE_QUESTION":
@@ -66,14 +66,14 @@ export const initializeApp = () => {
                 movies: movieResponse.data.results
             })
 
-            // get popular people to use as pool of wrong answers
+            // get popular people to use as pool of answers
             const popularUrlBase = "https://api.themoviedb.org/3/person/popular";
             const language = "?language=en-US&";
             const api_key = "api_key=183f0e181e572ee212574833f29d2c1c&";
 
             const output = {
                 movies: movieResponse.data.results,
-                wrongPool: []
+                answerPool: []
             }
             for (let pageNum = 1; pageNum <= 6; pageNum++) {
                 let popularPeopleRequest = popularUrlBase + language + api_key + pageNum;
@@ -82,7 +82,7 @@ export const initializeApp = () => {
                     .then(popularResponse => {
                         for (let j = 0; j < popularResponse.data.results.length; j++) {
                             if (!popularResponse.data.results[j].adult) {
-                                output.wrongPool.push({
+                                output.answerPool.push({
                                     name: popularResponse.data.results[j].name,
                                     id: popularResponse.data.results[j].id
                                 })
@@ -97,10 +97,10 @@ export const initializeApp = () => {
             .then(output => {
                 // console.log(output);
                 dispatch({
-                    type: "SET_WRONG_PEOPLE_POOL",
-                    wrongPool: output.wrongPool
+                    type: "SET_ANSWER_POOL",
+                    answerPool: output.answerPool
                 })
-                dispatch(createQuestion(output.movies, output.wrongPool));
+                dispatch(createQuestion(output.movies, output.answerPool));
             })
             .catch(err => {
                 dispatch({
@@ -119,17 +119,17 @@ const getCast = (movieID) => {
     return axios.get(castRequest);
 }
 
-const getWrongAnswer = (castList, wrongPool) => {
-    // get random person from pool of potential wrong answers
+const getAnswer = (castList, answerPool) => {
+    // get random person from pool of potential answers
     // and make sure that personID is not included in the cast array
     do {
-        var randomWrongIndex = Math.floor(Math.random() * wrongPool.length);
-    } while (castList.some((member) => member.id === wrongPool[randomWrongIndex]));
-    return wrongPool[randomWrongIndex];
+        var randomAnswerIndex = Math.floor(Math.random() * answerPool.length);
+    } while (castList.some((member) => member.id === answerPool[randomAnswerIndex]));
+    return answerPool[randomAnswerIndex];
 
 }
 
-export const createQuestion = (movieList, wrongPool) => {
+export const createQuestion = (movieList, answerPool) => {
     // return a random movie object
     // Math.floor( Math.random() * (y-x) + x ) 
     let moviePick = movieList[Math.floor(Math.random() * movieList.length)];
@@ -164,9 +164,9 @@ export const createQuestion = (movieList, wrongPool) => {
                     choices.push(answerObj);
                 }
 
-                let wrongAnswer = getWrongAnswer(castList, wrongPool);
+                let answer = getAnswer(castList, answerPool);
 
-                choices = [...choices, { id: wrongAnswer.id, name: wrongAnswer.name, correctAnswer: true }];
+                choices = [...choices, { id: answer.id, name: answer.name, correctAnswer: true }];
 
                 // console.log("before shuffle");
                 // console.log(choices);
@@ -232,19 +232,6 @@ Lots of practice getting random elements from an array.
     state.score
 */
 
-/* getWrongAnswer Notes
-    //need a "wrong answer" actor
-    // query to get most recently added person, i.e., the number of people in the db:
-    // https://api.themoviedb.org/3/person/latest?api_key=183f0e181e572ee212574833f29d2c1c&language=en-US
-
-    // As of 2018-APR-12, there are 2022078 people in the db. 
-    // Using 2,000,000 as max just because it's a nice round number.
-
-    // query to get the person with id 2000000:  "https://api.themoviedb.org/3/person/2000000?api_key=183f0e181e572ee212574833f29d2c1c&language=en-US"
-
-    // Math.floor( Math.random() * (y-x) + x ) 
-*/
-
 
 
 // export const getMovies = () => {
@@ -292,31 +279,3 @@ To "randomly" pick 3 elements from array without duplicates, but doesn't work.
 
 
 // const tmdbPersonUrl = personUrlBase + randomPersonID + language + api_key;
-// let popularPeopleRequest = popularUrlBase + language + api_key + pageNum;
-
-// const popularPeopleRequest = "https://api.themoviedb.org/3/person/popular?language=en-US&api_key=183f0e181e572ee212574833f29d2c1c&page=1";
-
-
-// const getWrongAnswer = (castList) => {
-//     // max_person is the max person ID in the db - see note
-//     let max_person = 2000000;
-
-//     // get random personID between 0 and max_person
-//     // and make sure that personID is not included in the cast array
-//     do {
-//         var randomPersonID = Math.floor(Math.random() * max_person);
-//     } while (castList.some((member) => member.id === randomPersonID));
-
-//     //ARGH - ALSO NEED TO MAKE SURE THE PERSON IS NOT AN "ADULT" ACTOR.
-//     // And make sure the person actually exists.
-
-//     const personUrlBase = "https://api.themoviedb.org/3/person/";
-//     const language = "?language=en-US&";
-//     const api_key = "api_key=183f0e181e572ee212574833f29d2c1c";
-
-//     const tmdbPersonUrl = personUrlBase + randomPersonID + language + api_key;
-
-//     // const popularPeopleRequest = "https://api.themoviedb.org/3/person/popular?language=en-US&page=1&api_key=183f0e181e572ee212574833f29d2c1c";
-
-//     return axios.get(tmdbPersonUrl);
-// }

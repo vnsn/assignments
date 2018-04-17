@@ -1,7 +1,7 @@
 
 const initialState = {
-    questions: 13,
-    correct: 13
+    questions: 0,
+    correct: 0
 }
 
 const pointsReducer = (state = initialState, action) => {
@@ -9,15 +9,13 @@ const pointsReducer = (state = initialState, action) => {
         case "INCREMENT_QUESTIONS":
             return {
                 ...state,
-                questions: state.questions++,
-                loading: false
+                questions: state.questions + 1,
             };
 
         case "INCREMENT_CORRECT":
             return {
                 ...state,
-                correct: state.correct++,
-                loading: false
+                correct: state.correct + 1,
             };
         default:
             return state;

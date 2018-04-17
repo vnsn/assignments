@@ -28,27 +28,22 @@ class Game extends Component {
 
   handleClick(e) {
     this.setState({ isAnswered: false });
-    this.props.createQuestion(this.props.movieList, this.props.wrongPool);
+    this.props.createQuestion(this.props.movieList, this.props.answerPool);
   }
 
   handleAnswer(e) {
-    console.log(e.target);
-    const { name, value } = e.target;
-    console.log(name);
-    console.log(value)
+    const { value } = e.target;
     this.setState({ isAnswered: true });
-
     this.props.incrementQuestions();
-
-    console.log(this.props.answers);
-
-
+    let correctID = this.props.answers.find(person => person.correctAnswer).id;
+    if (parseInt(value, 10) === correctID) {
+      this.props.incrementCorrect();
+    }
   }
 
   render() {
     const { loading, errMsg, currMovie, answers } = this.props;
     const { title, releaseDate } = currMovie;
-
 
     const castItems = answers.map((person, index) => {
       return (
