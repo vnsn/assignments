@@ -11,7 +11,19 @@ app.use(bodyParser.json());
 
 app.route("/bounties")
     .get((req, res) => {
-        res.status(200).send(bounties);
+        const { query } = req;
+        const queriedBounties = bounties.filter( bounty => {
+            //assume true until proven otherwise
+            for (let key in query) {
+                if (!bounty.hasOwnProperty(key) || String(bounty[key]).toLowerCase() !== query[key].toLowerCase()) {
+                    return false;
+                }
+            }
+            return true;
+        })
+
+
+        res.status(200).send(queriedBounties);
     })
     .post((req, res) => {
         const newBounty = req.body;
