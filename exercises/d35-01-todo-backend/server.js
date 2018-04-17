@@ -50,9 +50,7 @@ app.route("/cats/:id")
         cats = cats.filter(cat => cat._id !== id);
 
         // res.status(200), send({message: `${id} was successfully removed!`});
-
         res.status(204).send(); 
-
     })
 
     //kind of combo of get one and post
@@ -61,8 +59,8 @@ app.route("/cats/:id")
         // find the param id
         const { id } = req.params;
         let editedCat = req.body;
-        // map through cats and replace the cat w/matching id with req.body
 
+        // map through cats and replace the cat w/matching id with req.body
         cats = cats.map(cat => cat._id === id ? editedCat = {...cat, ...editedCat} : cat);
         res.status(200).send(editedCat)
     })
@@ -117,9 +115,9 @@ app.route("/todos")
         const { id } = req.params;
         let editedTodo = req.body;
 
-        // map through todos and replace the cat w/matching id with req.body
+        // map through todos and replace the todo w/matching id with req.body
         todos = todos.map(todo => todo._id === id ? editedTodo = {...todo, ...editedTodo} : todo);
-        res.status(200).send(editedTodo)
+        res.status(200).send(editedTodo);
     })
 
 app.listen(port, () => console.log(`Server running on port ${port}`));
