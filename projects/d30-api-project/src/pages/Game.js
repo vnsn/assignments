@@ -24,18 +24,6 @@ class Game extends Component {
     }
   }
 
-
-  componentDidMount() {
-    this.props.createQuestion(this.props.movieList, this.props.wrongPool);
-
-  }
-
-  // componentWillReceiveProps(newProps) {
-  //   if (newProps.movieList.length > 0 && this.props.movieList.length !== newProps.movieList.length) {
-  //     this.props.createQuestion();
-  //   }
-  // }
-
   handleClick(e) {
     this.setState({ isAnswered: false });
     this.props.createQuestion(this.props.movieList, this.props.wrongPool);
@@ -46,8 +34,6 @@ class Game extends Component {
     const { name, value } = e.target;
     console.log(name);
     this.setState({ isAnswered: true })
-
-
   }
 
   render() {
@@ -58,7 +44,7 @@ class Game extends Component {
     const castItems = answers.map((person, index) => {
       return (
         <li key={person.name + index}  >
-          <button className="answer" name={person.name} onClick={(e) => this.handleAnswer(e)} style={!this.state.isAnswered ? this.style.white : person.correctAnswer ? this.style.red : this.style.green}>{person.name}</button>
+          <button className="answer" name={person.name} onClick={(e) => this.handleAnswer(e)} style={!this.state.isAnswered ? this.style.white : person.correctAnswer ? this.style.white : this.style.green}>{person.name}</button>
         </li>
 
       );
