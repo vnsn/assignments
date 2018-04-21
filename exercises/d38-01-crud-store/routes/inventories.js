@@ -22,6 +22,7 @@ inventoryRouter.route("/:id")
 
     // GET one
     .get((req, res) => {
+        //InventoryModel.findById(req.params.id, () => {})
         // use findOne()
         // the "id" below after params comes from the "/:id" in the .route above
         InventoryModel.findOne({_id: req.params.id}, (err, foundInventory) => {
@@ -33,7 +34,8 @@ inventoryRouter.route("/:id")
 
     // DELETE one
     .delete((req, res) => {
-        // use findByIdAndDelete
+        // InventoryModel.findByIdAndRemove(req.params.id, () => {})
+        // use findOneAndDelete
         InventoryModel.findOneAndRemove({_id: req.params.id}, (err, deletedInventory) => {
             if (err) return res.send(err);
             if (!deletedInventory) return res.status(404).send({message: "Not found"})
@@ -42,7 +44,8 @@ inventoryRouter.route("/:id")
     })
     // PUT one
     .put((req, res) => {
-        //findByIdAndUpdate()
+        // InventoryModel.findByIdAndUpdate(req.params.id, () => {})
+        //findOneAndUpdate()
         InventoryModel.findOneAndUpdate({_id: req.params.id}, req.body, {new: true}, (err, updatedInventory) => {
             if(err) return res.send(err);
             if (!updatedInventory) return res.status(404).send({message: "Not found"});
