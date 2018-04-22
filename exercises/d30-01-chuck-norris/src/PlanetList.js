@@ -10,14 +10,16 @@ class PlanetList extends Component {
 
     render() {
         const {castList, loading, errMsg} = this.props;
-        const planetItems = castList.map((planet, i) => {
-            return (
-                <div key={planet.name + i}>
-                    <h1>{planet.name}</h1>
-                    <p>{planet.climate}</p>
-                </div>
-            )
-        })
+
+        // const planetItems = castList.map((planet, i) => {
+        //     return (
+        //         <div key={planet.name + i}>
+        //             <h1>{planet.name}</h1>
+        //             <p>{planet.climate}</p>
+        //         </div>
+        //     )
+        // })
+
 
         if (loading) {
             return (
@@ -30,7 +32,9 @@ class PlanetList extends Component {
         } else {
             return (
                 <div>
-                    {planetItems}
+                    {/* {planetItems} */}
+                    <h1>Random Joke</h1>
+                    <p>{castList}</p>
                 </div>
             )
         }
