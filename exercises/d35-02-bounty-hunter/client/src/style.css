@@ -1,0 +1,106 @@
+* {
+    box-sizing: border-box;
+}
+
+html {
+    font-size: 16px;
+}
+
+body {
+    height: 100vh;
+    margin: auto;
+    background-image: url("./Jango-fett-and-the-clones.jpg");
+    background-attachment: fixed;
+    background-size: cover;
+    background-repeat: no-repeat;
+    color: white;
+    font-weight: bold;
+}
+
+h1, h2 {
+    text-align: center;
+}
+
+p {
+    margin-top: 0.5em;
+    margin-bottom: 0.5em;
+}
+
+header {
+    text-align: center;
+    background-color: #990000;
+    color: white;
+    height: 5em;
+    margin: 0;
+    padding: 1em;
+}
+
+header h1 {
+    margin: 0;
+    font-size: 3em;
+}
+
+main {
+    width: 80%;
+    margin: auto;
+
+}
+
+.add-form {
+    display: flex;
+    flex-wrap: wrap;
+}
+
+.enemy {
+    border-bottom: 1px solid #990000;
+    padding: 1em 0;
+}
+
+.bounty-name {
+    text-align: left;
+    display: inline;
+    text-transform: uppercase;
+}
+
+.del-button {
+    display: inline;
+    color: #990000;
+    margin-right: 0.5em;
+}
+
+.edit-form {
+    display: flex;
+    flex-wrap: wrap;
+}
+
+label {
+    margin: 0 0.5em 0 0;
+}
+
+input, select {
+    margin: 0 0.5em;
+}
+
+input {
+    border: 1px solid gray;
+    border-radius: 3px;
+    padding: 0.25em;
+}
+
+button {
+    /* display: block; */
+    /* margin: 20px 10px 5px 0; */
+    /* height: 40px; */
+    height: 3em;
+    /* width: 60px; */
+    border-radius: 20%;
+}
+
+ul {
+    display: flex;
+
+}
+
+li {
+    list-style: none;
+}
