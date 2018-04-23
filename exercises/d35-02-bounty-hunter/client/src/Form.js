@@ -21,12 +21,12 @@ class Form extends Component {
     }
 
     handleChange(event) {
-        const { name, value } = event.target;
+        const { name, value, type, checked } = event.target;
         this.setState(prevState => {
             return {
                 inputs: {
                     ...prevState.inputs,
-                    [name]: value
+                    [name]: type === "checkbox" ? checked : value
                 }
             }
         })
@@ -50,7 +50,7 @@ class Form extends Component {
                     </p>
                     <p>
                         <label htmlFor="dead">Dead?
-                        <input onChange={this.handleChange} name="dead" id="dead" type="checkbox" value={dead} /></label>
+                        <input onChange={this.handleChange} name="dead" id="dead" type="checkbox" checked={dead} /></label>
                     </p>
 
                     <p>Sith or Jedi?
