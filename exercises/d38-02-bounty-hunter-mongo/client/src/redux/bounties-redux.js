@@ -23,7 +23,7 @@ const bountyReducer = (state = initialState, action) => {
             return {
                 ...state,
                 loading: false,
-                data: action.data
+                data: action.newBounty
             }
         case "ADD_BOUNTY":
             return {

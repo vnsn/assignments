@@ -5,7 +5,7 @@ import List from "./List";
 
 function App(props) {
     return (
-        <div>
+        <div className="wrapper">
             <header>
                 <h1>Mongoose Bounty Hunter</h1>
             </header>

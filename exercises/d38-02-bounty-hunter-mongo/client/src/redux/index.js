@@ -5,6 +5,6 @@ import bountyReducer from "./bounties-redux";
 
 const store = createStore(combineReducers({bounties: bountyReducer}), applyMiddleware(thunk));
 
-store.subscribe(() => console.log(store.getState()));
+// store.subscribe(() => console.log(store.getState()));
 
 export default store;

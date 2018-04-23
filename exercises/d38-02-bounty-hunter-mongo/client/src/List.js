@@ -6,7 +6,11 @@ import EditForm from "./EditForm";
 
 class List extends Component {
 
-    render(props) {
+    componentDidMount() {
+        this.props.getBounties();
+    }
+
+    render() {
         const { data } = this.props;
         const bountyList = data.map(bounty => {
             return (
@@ -20,7 +24,7 @@ class List extends Component {
         })
 
         return (
-            <div>
+            <div className="enemy-container">
                 {bountyList}
             </div>
         )
@@ -29,14 +33,3 @@ class List extends Component {
 }
 
 export default connect(state => state.bounties, { getBounties, deleteBounty })(List);
-
-
-// why don't we need constructor??
-// why is it const { data } = this.props; and not just props??
-// but calling the deleteBounty function only needs props.deleteBounty. 
-
-{/* <ul className="bounty-info">
-<li>Reward: ${bounty.amount}</li>
-<li>Type: {bounty.type}</li>
-<li>Dead? {bounty.dead}</li>
-</ul> */}
