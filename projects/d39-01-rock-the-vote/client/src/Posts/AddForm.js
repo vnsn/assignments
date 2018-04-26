@@ -39,17 +39,17 @@ class AddForm extends Component {
     render() {
         const { title, summary } = this.state.inputs;
         return (
-            <div>
                 <form onSubmit={this.handleSubmit} className="add-form">
                     <p>
-                        <input onChange={this.handleChange} name="title" value={title} type="text" placeholder="Title" />
+                        <label htmlFor="title">Title</label>
+                        <input onChange={this.handleChange} name="title" id="title" value={title} type="text" />
                     </p>
                     <p>
-                        <textarea onChange={this.handleChange} name="summary" value={summary} rows="4" cols="50" placeholder="Summary of the issue" />
+                        <label htmlFor="summary">Summary of the issue</label>
+                        <textarea onChange={this.handleChange} name="summary" id="summary" value={summary} />
                     </p>
                     <button>Post</button>
                 </form>
-            </div>
         )
     }
 }

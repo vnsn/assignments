@@ -34,9 +34,8 @@ class List extends Component {
                     
                     <p className="item-summary">{item.summary}</p>
 
-                    <div className="comment-container">
-                        <CommentList {...item} />
-                    </div>
+                    <CommentList {...item} />
+
                 </div>
             );
         })

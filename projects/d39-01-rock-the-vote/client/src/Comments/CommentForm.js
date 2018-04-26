@@ -36,13 +36,11 @@ class CommentForm extends Component {
     render() {
         const { newComment } = this.state.inputs;
         return (
-            <div>
-                <form onSubmit={() => this.handleSubmitComment(this.props._id, this.props, newComment)} className="comment-form">
-                    <input onChange={this.handleChange} name="newComment" value={newComment} placeholder="Add your comment - be nice" />
+            <form onSubmit={() => this.handleSubmitComment(this.props._id, this.props, newComment)} className="comment-form">
+                <input onChange={this.handleChange} name="newComment" value={newComment} placeholder="Add your comment - be nice" />
 
-                    <button>Submit</button>
-                </form>
-            </div>
+                <button>Submit</button>
+            </form>
         )
     }
 }

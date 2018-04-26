@@ -42,13 +42,11 @@ class CommentForm extends Component {
         const { editingIndex, itemObj } = this.props;
         const { editingText } = this.state.inputs;
         return (
-            <div>
-                <form onSubmit={(e) => this.handleEditComment(e, itemObj._id, itemObj, editingText, editingIndex)} className="comment-form">
+                <form onSubmit={(e) => this.handleEditComment(e, itemObj._id, itemObj, editingText, editingIndex)} className="comment-edit">
                     <input onChange={this.handleChange} name="editingText" value={editingText} />
 
                     <button>Save</button>
                 </form>
-            </div>
         )
     }
 }
