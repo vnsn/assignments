@@ -1,0 +1,177 @@
+* {
+    box-sizing: border-box;
+    /* border: 2px solid chartreuse; */
+}
+
+html {
+    font-size: 16px;
+}
+
+body {
+    /* height: 100vh; */
+    margin: auto;
+    font-weight: bold;
+}
+
+h1,
+h2 {
+    text-align: center;
+}
+
+p {
+    margin-top: 0.5em;
+    margin-bottom: 0.5em;
+}
+
+.wrapper {
+    display: grid;
+    grid-template-rows: auto 1fr;
+    justify-items: center;
+}
+
+header {
+    justify-self: stretch;
+    text-align: center;
+    background-color: #990000;
+    background-image: url("./rockthevotebanner.jpg");
+    background-size: contain;
+    background-repeat: no-repeat;
+    background-position: center;
+    margin: 0;
+    padding: 1em;
+}
+
+header h1 {
+    margin: 0;
+    font-size: 3em;
+    color: transparent;
+}
+
+main {
+    width: 80%;
+    margin: auto;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+/* 
+main>* {
+    border: 2px solid red;
+} */
+
+.add-form {
+    display: flex;
+    flex-direction: column;
+    flex-wrap: wrap;
+    align-items: center;
+}
+
+.issue-container {
+    width: 100%;
+}
+
+.issue {
+    border: 1px solid blue;
+    margin: 1em 0;
+    padding: 1em 0.5em;
+    display: grid;
+    grid-template-columns: 10% 1fr;
+    grid-template-areas: "vote inam idel" "vote isum isum" "comm comm comm";
+    grid-row-gap: 1ch;
+    grid-column-gap: 2ch;
+    align-items: center;
+
+
+}
+
+.votes {
+    grid-area: vote;
+    align-self: stretch;
+    display: grid;
+    grid-template-columns: 1fr;
+    justify-items: center;
+    align-items: center;
+}
+
+.issue-name {
+    text-align: left;
+    text-transform: uppercase;
+    margin-right: 1ch;
+    grid-area: inam;
+}
+
+.del-button {
+    /* display: inline; */
+    color: #990000;
+    margin-right: 0.5em;
+    grid-area: idel;
+}
+
+.item-summary {
+    grid-area: isum;
+}
+
+.comment-container {
+    border: 1px solid #990000;
+    grid-area: comm;
+    padding: 1em 0;
+}
+
+.comment-form {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;    
+}
+
+.comment-form input {
+    flex-grow: 1;
+
+}
+
+
+.comment {
+    margin: 1em 0;
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+}
+
+.comment-container h3 {
+    text-align: center;
+    font-style: italic;
+}
+
+textarea {
+    margin: 0 0.5em 0 0;
+    padding: 0.5em;
+}
+
+input,
+select {
+    margin: 0 0.5em;
+}
+
+input {
+    border: 1px solid gray;
+    border-radius: 3px;
+    padding: 0.5em;
+}
+
+button {
+    height: 3em;
+    max-width: 60px;
+    border-radius: 20%;
+}
+
+ul {
+    display: flex;
+}
+
+li {
+    list-style: none;
+}
+
+button:focus {
+    outline: none;
+}
