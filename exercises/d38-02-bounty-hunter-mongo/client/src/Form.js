@@ -19,10 +19,7 @@ class Form extends Component {
         this.handleSubmit = this.handleSubmit.bind(this);
 
     }
-
-
-// I think something is off with the "dead" property. 
-
+    
     handleChange(event) {
         const { name, value, type, checked } = event.target;
         this.setState(prevState => {
@@ -76,6 +73,6 @@ class Form extends Component {
 }
 
 export default connect(null, { addBounty })(Form)
-                // where the null is, is usually mapStateToProps, but since we don't need anything from state, we don't need to pass a function here. 
-                // Need to put null as placeholder and cue that 
+// where the null is, is usually mapStateToProps, but since we don't need anything from state, we don't need to pass a function here. 
+// Need to put null as placeholder and cue that 
 // connect(function, object)
